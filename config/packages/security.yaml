@@ -1,13 +1,42 @@
 security:
+    # encryptage du mot de passe pour User
+    encoders:
+        App\Entity\Equipe:
+            algorithm: bcrypt
+
+
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory: { memory: ~ }
+        db:
+            # les utilisateurs  sont des entités Equipe
+            entity:
+                class: App\Entity\Equipe
+                # l'identifiant est l'email
+                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             anonymous: true
+            #route du formulaire
+            form_login:
+                login_path: app_security_login
+                check_path: app_security_login
+
+            # Route de la page de déconnexion
+            logout:
+                path: app_security_logout
+
+            #provider defini au-dessus dans la section providers
+            provider: db
+
+
+            # sur tous le site, la connexion se fera de la même manière via se connecter (pour user et admin)
+            pattern: ^/
+
+
 
             # activate different ways to authenticate
 
@@ -20,5 +49,6 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # STATUT_ADMIN
+        - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
