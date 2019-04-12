@@ -217,4 +217,5 @@ class Equipe implements UserInterface
     {
         // TODO: Implement eraseCredentials() method.
     }
+
 }
