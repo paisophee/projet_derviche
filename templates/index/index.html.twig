@@ -7,14 +7,12 @@
     <!-- INTRO -->
     <section id="intro" class="main style1 dark fullscreen">
         <div class="content">
-            <header>
+
                 <h2>Derviche Diffusion</h2>
-            </header>
+
             <p>Une structure de diffusion<strong> accessible, transparente et mutualiste</strong> <br/>
                 Comme les derviches tourneurs, tous les spectacles vivants ont besoin de tourner pour vivre et grandir !</p>
-            <footer>
-                <a href="#one" class="button style2 down">More</a>
-            </footer>
+                <a href="#services" class="button style2 down">More</a>
         </div>
     </section>
 
@@ -23,17 +21,93 @@
     <!-- services -->
     <section id="services" class="main style2 right dark fullscreen">
         <div class="content box style2">
-            <header>
+
                 <h2>NOS SERVICES</h2>
-            </header>
-            <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-                Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-                id varius justo euismod in. Curabitur egestas consectetur magna.</p>
+
+            <p>Derviche propose une approche singulière de la diffusion&nbsp;:</p>
+            <ul class="list">
+                <li class="pb-2"><i class="fas fa-arrow-circle-right"></i> Ouverte : pour toutes les compagnies professionnelles, tous les arts et tous les formats</li>
+                <li class="pb-2"><i class="fas fa-arrow-circle-right"></i> Innovante : une approche structurée et en base de données pour réduite les coûts et gagner en efficacité</li>
+                <li class="pb-2"><i class="fas fa-arrow-circle-right"></i> Solidaire : des réseaux mutualisés entre compagnies, des conseils et formations proposés à chaque étape, des services « à la carte » selon vos besoins et votre budget</li>
+            </ul>
+            <a href="#" class="ensavoirplus">En savoir plus</a>
         </div>
-        <a href="#two" class="button style2 down anchored">Next</a>
+        <a href="#spectacle" class="button style2 down anchored">Next</a>
     </section>
 
 
+
+
+    <!-- spectacle -->
+    <section id="spectacle" class="main style3 primary">
+        <div class="content">
+
+                <h2>Nos Spectacles</h2>
+                <p>par catégories</p>
+
+
+            <!-- Gallery  -->
+            <div class="gallery">
+                <article class="from-left">
+                    <div class="image-container">
+                        <a href="#" class="image fit hover-shadow-text">
+                            <h3 class="text-categorie">Théâtre - Jeune public</h3>
+                            <img src="{{ asset('images/thumbs/jeun_public_thumbs.jpg') }}" title="jeune public" alt="theatre jeune public" />
+                        </a>
+                    </div>
+                </article>
+
+                <article class="from-right">
+                    <div class="image-container">
+                        <a href="#" class="image fit hover-shadow-text">
+                            <h3 class="text-categorie">Théâtre / Musique - Jeune public</h3>
+                            <img src="{{ asset('images/thumbs/jeun_public_music_thumbs.jpg') }}" title="jeune public" alt="theatre jeune public" /></a>
+                    </div>
+                </article>
+
+                <article class="from-left">
+                    <div class="image-container">
+                        <a href="#" class="image fit hover-shadow-text">
+                            <h3 class="text-categorie">Théâtre / Danse - Jeune public</h3>
+                            <img src="{{ asset('images/thumbs/jeun_public_theatre_danse_thumbs.jpg') }}" title="jeune public" alt="theatre danse jeune public" />
+                        </a>
+                    </div>
+                </article>
+
+                <article class="from-right">
+                    <div class="image-container">
+                        <a href="#" class="image fit hover-shadow-text">
+                            <h3 class="text-categorie">Adolescent</h3>
+                            <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" title="jeune public" alt="theatre jeune public" /></a>
+                    </div>
+                </article>
+
+                <article class="from-left">
+                    <div class="image-container">
+                        <a href="#" class="image fit hover-shadow-text">
+                            <h3 class="text-categorie">Théâtre - Jeune public</h3>
+                            <img src="{{ asset('images/thumbs/jeun_public_thumbs.jpg') }}" title="jeune public" alt="theatre jeune public" />
+                        </a>
+                    </div>
+                </article>
+
+                <article class="from-right">
+                    <div class="image-container">
+                        <a href="#" class="image fit hover-shadow-text">
+                            <h3 class="text-categorie">Théâtre / Musique - Jeune public</h3>
+                            <img src="{{ asset('images/thumbs/jeun_public_music_thumbs.jpg') }}" title="jeune public" alt="theatre jeune public" /></a>
+                    </div>
+                </article>
+
+
+
+
+            </div>
+
+        </div>
+
+
+    </section>
 
 
 {% endblock %}

@@ -71,7 +71,7 @@
 				.triggerHandler('resize.ie-flexbox-fix');
 
 		}
-
+/*
 	// Gallery.
 		$window.on('load', function() {
 
@@ -104,7 +104,7 @@
 				});
 
 		});
-
+*/
 	// Section transitions.
 		if (browser.canUse('transition')) {
 

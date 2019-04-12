@@ -1,0 +1,51 @@
+
+/*bouton en savoir plus*/
+.ensavoirplus{
+    border: 0.8px solid #39444B;
+    border-radius: 8px;
+    padding: 12px 22px;
+    text-decoration: none;
+    color: #39444B;
+    transition: 0.5s;
+}
+
+.ensavoirplus:hover,
+.ensavoirplus:focus{
+    text-decoration: none;
+    background-color: #39444B;
+    color: white !important;
+}
+
+
+
+
+/*effet d'ombre sur photo*/
+
+.image-container{
+    transition: 0.3s;
+}
+
+
+.text-categorie{
+    position: absolute;
+
+    z-index: 1;
+    color: white !important;
+    font-size: 1em;
+    font-weight: 600 !important;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    margin: 35% 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.image-container:hover{
+    text-shadow: 2px 2px 8px #000000;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+
+}
+
