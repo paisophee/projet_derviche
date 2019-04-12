@@ -1,12 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang=fr>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Derviche Diffusion{% endblock %}</title>
+        <meta name="description" content="Une structure de diffusion accessible, transparente et mutualiste. Comme les derviches tourneurs, tous les spectacles vivants ont besoin de tourner pour vivre et grandir !">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('lib/bootstrap/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('lib/jquery/jquery-ui.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('lib/font-awesome.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/noscript.css') }}">
+        {% endblock %}
     </head>
-    <body>
+
+    <body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <h1>Derviche Diffusion</h1>
+        <nav>
+            <ul>
+                <li><a href="#intro">Accueil</a></li>
+                <li><a href="#services">Nos services</a></li>
+                <li><a href="#spectacles">Nos spectacles</a></li>
+                <li><a href="#two">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#">Se connecter/S'inscrire</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+
+
+
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+
+
+    <footer id="footer">
+        <ul class="menu">
+            <li><a href="#">Blablabla</a></li>
+            <li><a href="#">Blablabla</a></li>
+            <li><a href="#">Admin</a></li>
+        </ul>
+
+    </footer>
+        {% block javascripts %}
+            <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <script src="{{ asset('js/jquery.poptrox.min.js') }}"></script>
+            <script src="{{ asset('js/jquery.scrolly.min.js') }}"></script>
+            <script src="{{ asset('js/jquery.scrollex.min.js') }}"></script>
+            <script src="{{ asset('js/browser.min.js') }}"></script>
+            <script src="{{ asset('js/breakpoints.min.js') }}"></script>
+            <script src="{{ asset('js/util.js') }}"></script>
+            <script src="{{ asset('lib/bootstrap/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('js/main.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
