@@ -24,6 +24,7 @@ security:
             form_login:
                 login_path: app_security_login
                 check_path: app_security_login
+                default_target_path: /admin/accueil
 
             # Route de la page de déconnexion
             logout:

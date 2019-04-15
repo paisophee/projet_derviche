@@ -26,7 +26,7 @@
     {% if is_granted('ROLE_ADMIN') %}
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container navbar-nav">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{ path('app_admin_accueil_index') }} ">
                     Admin
                 </a>
                 <div class="navbar-collapse">
@@ -49,6 +49,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 Gestion des lieux
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_security_logout') }} ">
+                                Déconnexion
                             </a>
                         </li>
                     </ul>
@@ -75,7 +80,6 @@
 
 
 
-
         {% block body %}{% endblock %}
 
 
@@ -86,7 +90,7 @@
             <ul class="menu">
                 <li><a href="#">Mentions légales</a></li>
                 <li><a href="#">Politique de confidentialité</a></li>
-                <li><a href="#">Admin</a></li>
+                <li><a href="{{ path('app_security_login') }}">Admin</a></li>
             </ul>
         </div>
         <div id="footer footerBas">
@@ -124,7 +128,7 @@
 
             <script src="{{ asset('lib/bootstrap/bootstrap.min.js') }}"></script>
 
-            <script src="{{ asset('js/main.js') }}"></script>#}
+            <script src="{{ asset('js/main.js') }}"></script>
         {% endblock %}
     </body>
 </html>
