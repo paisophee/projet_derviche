@@ -27,6 +27,15 @@ class Categorie
     private $type;
 
     /**
+     * Validation de l'image
+     * @Assert\Image(mimeTypesMessage="Le fichier doit être une image",
+     * maxSize="200k", maxSizeMessage="Le fichier ne doit pas faire plus de 200ko")
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $image;
+
+
+    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Spectacle", mappedBy="id_categorie")
      */
     private $spectacles;
@@ -52,6 +61,25 @@ class Categorie
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     * @return Categorie
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+        return $this;
+    }
+
 
     /**
      * @return Collection|Spectacle[]

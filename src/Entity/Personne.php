@@ -61,6 +61,14 @@ class Personne
      */
     private $email2;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Equipe", inversedBy="personnes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $equipe;
+
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -146,6 +154,18 @@ class Personne
     public function setEmail2(?string $email2): self
     {
         $this->email2 = $email2;
+
+        return $this;
+    }
+
+    public function getEquipe(): ?Equipe
+    {
+        return $this->equipe;
+    }
+
+    public function setEquipe(?Equipe $equipe): self
+    {
+        $this->equipe = $equipe;
 
         return $this;
     }

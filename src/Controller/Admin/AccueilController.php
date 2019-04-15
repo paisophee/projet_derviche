@@ -5,6 +5,12 @@ namespace App\Controller\Admin;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class AccueilController
+ * @package App\Controller\Admin
+ * @Route("/")
+ */
+
 class AccueilController extends AbstractController
 {
     /**
@@ -12,8 +18,6 @@ class AccueilController extends AbstractController
      */
     public function index()
     {
-        return $this->render('admin/accueil/index.html.twig', [
-            'controller_name' => 'AccueilController',
-        ]);
+        return $this->render('admin/accueil/index.html.twig');
     }
 }
