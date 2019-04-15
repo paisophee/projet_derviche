@@ -8,12 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class AccueilController extends AbstractController
 {
     /**
-     * @Route("/accueil")
+     * @Route("/Accueil")
      */
     public function index()
     {
-        return $this->render('admin/accueil/index.html.twig', [
-            'controller_name' => 'AccueilController',
-        ]);
+        return $this->render('admin/accueil/index.html.twig');
     }
 }

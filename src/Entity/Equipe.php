@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -63,7 +65,17 @@ class Equipe implements UserInterface
      *
      * @Assert\NotBlank(message="Le mot de passe est obligatoire")
      */
-    private $plainPassword;  // = mot de passe en clair
+    private $plainPassword;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Personne", mappedBy="equipe")
+     */
+    private $personnes;
+
+    public function __construct()
+    {
+        $this->personnes = new ArrayCollection();
+    }  // = mot de passe en clair
 
 
 
@@ -216,6 +228,37 @@ class Equipe implements UserInterface
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
+    }
+
+    /**
+     * @return Collection|Personne[]
+     */
+    public function getPersonnes(): Collection
+    {
+        return $this->personnes;
+    }
+
+    public function addPersonne(Personne $personne): self
+    {
+        if (!$this->personnes->contains($personne)) {
+            $this->personnes[] = $personne;
+            $personne->setEquipe($this);
+        }
+
+        return $this;
+    }
+
+    public function removePersonne(Personne $personne): self
+    {
+        if ($this->personnes->contains($personne)) {
+            $this->personnes->removeElement($personne);
+            // set the owning side to null (unless already changed)
+            if ($personne->getEquipe() === $this) {
+                $personne->setEquipe(null);
+            }
+        }
+
+        return $this;
     }
 
 }
