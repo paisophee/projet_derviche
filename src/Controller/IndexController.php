@@ -12,6 +12,14 @@ class IndexController extends AbstractController
      */
     public function index()
     {
-        return $this->render('admin/accueil/index.html.twig');
+        if (!is_null($this->getUser())){
+            return $this->render('admin/accueil/index.html.twig');
+        }else{
+            return $this->render('index/index.html.twig');
+        }
+
+
     }
+
+
 }
