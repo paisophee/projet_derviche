@@ -1,3 +1,10 @@
+
+.hauteurMin{
+    min-height: 70vh !important;
+}
+
+
+
 header a{
     text-decoration :none;
     color: #39444B;
