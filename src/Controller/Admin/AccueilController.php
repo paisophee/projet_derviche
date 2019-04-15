@@ -8,13 +8,13 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class AccueilController
  * @package App\Controller\Admin
- * @Route("/admin")
+ * @Route("/")
  */
 
 class AccueilController extends AbstractController
 {
     /**
-     * @Route("/Accueil")
+     * @Route("/accueil")
      */
     public function index()
     {
