@@ -19,13 +19,8 @@
 
 
 
-/*effet d'ombre sur photo*/
 
-.image-container{
-    transition: all 1s ease;
-    position: relative;
-}
-
+/* texte categorie*/
 
 .text-categorie{
     position: absolute;
@@ -42,14 +37,72 @@
 }
 
 
-.image-container:hover{
+/*effet d'ombre sur photo*/
+
+/*
+article{
+    transition: all 1s ease-in-out;
+    position: relative;
+
+}
+
+article:hover{
     text-shadow: 2px 2px 8px #000000;
-    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0px 0px 49px 32px rgba(0,0,0,0.52);
     transform:scale(1.15);
     position: relative;
-    z-index: 5555 !important;
-
+    z-index: 999 !important;
+    transition: all 1s ease-in-out;
 
 
 }
 
+*/
+
+
+
+article{
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+
+}
+
+article:hover{
+    transform: scale(1.15, 1.15);
+    z-index: 999 !important;
+
+}
+
+article::after {
+    content: "";
+    border-radius: 5px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0px 49px rgba(0, 0, 0, 0.52);
+    opacity: 0;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+article:hover::after {
+    opacity: 1;
+}
+
+
+/*footer bas*/
+
+
+#footerBas{
+    background-color: white;
+    width: 100%;
+}
+
+.footerInfo p{
+    font-size: 0.8em;
+    margin-bottom: 0em;
+    margin-left: 20px;
+    text-align: center;
+}

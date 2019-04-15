@@ -45,13 +45,32 @@
 
 
 
-    <footer id="footer">
-        <a href="#intro" class="button style2 down anchored rotation"></a>
-        <ul class="menu">
-            <li><a href="#">Mentions légales</a></li>
-            <li><a href="#">Politique de confidentialité</a></li>
-            <li><a href="#">Admin</a></li>
-        </ul>
+    <footer >
+        <div id="footer">
+            <a href="#intro" class="button style2 down anchored rotation"></a>
+            <ul class="menu">
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Politique de confidentialité</a></li>
+                <li><a href="#">Admin</a></li>
+            </ul>
+        </div>
+        <div id="footer footerBas">
+            <div class="row p-3">
+                <div class="col-md-4 footerInfo">
+                    <p><strong>Derviche Diffusion © 2019</strong></p>
+                    <p>Structure de diffusion de spectacles vivants</p>
+                </div>
+                <div class="col-md-4 footerInfo">
+                    <p>Adresse : 13, rue de Cotte - 75012 Paris</p>
+                    <p>Bureaux & Courrier : 91 Bis rue Jean-Pierre Timbaud - 75011 Paris</p>
+                </div>
+                <div class="col-md-4 footerInfo">
+                    <p>Tina Wolters - +33.6.10.58.42.96</p>
+                    <p>tina.wolters@dervichediffusion.com</p>
+                </div>
+            </div>
+
+        </div>
 
     </footer>
         {% block javascripts %}
@@ -70,7 +89,9 @@
 
             <script src="{{ asset('lib/bootstrap/bootstrap.min.js') }}"></script>
 
-            <script src="{{ asset('js/main.js') }}"></script>#}
+            <script src="{{ asset('js/main.js') }}"></script>
+
+
         {% endblock %}
     </body>
 </html>
