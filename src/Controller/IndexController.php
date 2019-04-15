@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Composer\XdebugHandler\Status;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -12,13 +13,7 @@ class IndexController extends AbstractController
      */
     public function index()
     {
-        if (!is_null($this->getUser())){
-            return $this->render('admin/accueil/index.html.twig');
-        }else{
-            return $this->render('index/index.html.twig');
-        }
-
-
+        return $this->render('admin/equipe/index.html.twig');
     }
 
 
