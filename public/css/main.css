@@ -436,7 +436,7 @@ input, select, textarea {
 			color: #e5e6e7;
 			content: '\f1ce';
 			cursor: default;
-			display: block;
+			display: none;
 			font-size: 2em;
 			height: 2em;
 			left: 50%;
