@@ -1,3 +1,21 @@
+.container{
+    min-height: calc(100vh - 242px) !important;
+}
+
+header a{
+    text-decoration :none;
+    color: #39444B;
+    transition: 0.2s;
+}
+
+header a:hover{
+    color: gray;
+}
+
+.connexion{
+    margin: 0 auto;
+}
+
 
 /*bouton en savoir plus*/
 .ensavoirplus{
