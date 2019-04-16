@@ -70,11 +70,11 @@ class Equipe implements UserInterface
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Personne", mappedBy="equipe")
      */
-    private $personnes;
+    private $personne;
 
     public function __construct()
     {
-        $this->personnes = new ArrayCollection();
+        $this->personne = new ArrayCollection();
     }  // = mot de passe en clair
 
 
@@ -206,7 +206,7 @@ class Equipe implements UserInterface
      */
     public function getSalt()
     {
-        // TODO: Implement getSalt() method.
+
     }
 
     /**
@@ -233,15 +233,15 @@ class Equipe implements UserInterface
     /**
      * @return Collection|Personne[]
      */
-    public function getPersonnes(): Collection
+    public function getPersonne(): Collection
     {
-        return $this->personnes;
+        return $this->personne;
     }
 
     public function addPersonne(Personne $personne): self
     {
-        if (!$this->personnes->contains($personne)) {
-            $this->personnes[] = $personne;
+        if (!$this->personne->contains($personne)) {
+            $this->personne[] = $personne;
             $personne->setEquipe($this);
         }
 
@@ -250,8 +250,8 @@ class Equipe implements UserInterface
 
     public function removePersonne(Personne $personne): self
     {
-        if ($this->personnes->contains($personne)) {
-            $this->personnes->removeElement($personne);
+        if ($this->personne->contains($personne)) {
+            $this->personne->removeElement($personne);
             // set the owning side to null (unless already changed)
             if ($personne->getEquipe() === $this) {
                 $personne->setEquipe(null);

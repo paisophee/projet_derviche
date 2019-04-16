@@ -20,23 +20,23 @@ class SecurityController extends AbstractController
         Request $request,
         UserPasswordEncoderInterface $passwordEncoder
     ) {
-        $equipe = new Equipe();
-        $form = $this->createForm(EquipeType::class, $equipe);
+        $personne = new Equipe();
+        $form = $this->createForm(EquipeType::class, $personne);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
-                $password = $passwordEncoder->encodePassword(
-                    $equipe,
-                    $equipe->getPlainPassword()
+                $mdp = $passwordEncoder->encodePassword(
+                    $personne,
+                    $personne->getPlainPassword()
                 );
 
-                $equipe->setPassword($password);
+                $personne->setPassword($mdp);
 
                 $em = $this->getDoctrine()->getManager();
 
-                $em->persist($equipe);
+                $em->persist($personne);
                 $em->flush();
 
                 $this->addFlash('success', 'Votre compte est créé');

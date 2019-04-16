@@ -5,7 +5,9 @@ namespace App\Form;
 use App\Entity\Equipe;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -55,6 +57,14 @@ class EquipeType extends AbstractType
                     'invalid_message' => 'La confirmation ne correspond pas au mot de passe'
                 ]
             )
+            ->add(
+                'statut',
+                ChoiceType::class,[
+                    'choices'=>[
+                    'ROLE_USER' => 'ROLE_USER',
+                    'ROLE_ADMIN' => 'ROLE_ADMIN'
+                ]
+            ])
         ;
     }
 
