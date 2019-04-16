@@ -18,8 +18,6 @@ class AccueilController extends AbstractController
      */
     public function index()
     {
-        return $this->render('admin/accueil/index.html.twig', [
-            'controller_name' => 'AccueilController',
-        ]);
+        return $this->render('admin/accueil/index.html.twig');
     }
 }
