@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Derviche Diffusion{% endblock %}</title>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('css/images/favicon.png') }}"/>
         <meta name="description" content="Une structure de diffusion accessible, transparente et mutualiste. Comme les derviches tourneurs, tous les spectacles vivants ont besoin de tourner pour vivre et grandir !">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
@@ -72,7 +73,7 @@
             <ul>
                 <li><a href="{{ path('app_index_index') }} ">Accueil</a></li>
                 <li><a href="{{ path('app_pageservices_index') }} ">Nos services</a></li>
-                <li><a href="#">Nos spectacles</a></li>
+                <li><a href="{{ path('app_spectacle_index') }} ">Nos spectacles</a></li>
                 <li><a href="{{ path('app_faq_index') }} ">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#">Se connecter/S'inscrire</a></li>
