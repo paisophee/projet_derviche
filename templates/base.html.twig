@@ -64,10 +64,10 @@
 
     <!-- Header -->
     <header id="header">
-        <h1>Derviche Diffusion</h1>
+        <a href="{{ path('app_index_index') }} "><h1>Derviche Diffusion</h1></a>
         <nav>
             <ul>
-                <li><a href="#intro">Accueil</a></li>
+                <li><a href="{{ path('app_index_index') }} ">Accueil</a></li>
                 <li><a href="#services">Nos services</a></li>
                 <li><a href="#">Nos spectacles</a></li>
                 <li><a href="#two">FAQ</a></li>
@@ -85,15 +85,8 @@
 
 
     <footer >
-        <div id="footer">
-            <a href="#intro" class="button style2 down anchored rotation"></a>
-            <ul class="menu">
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="#">Politique de confidentialité</a></li>
-                <li><a href="{{ path('app_security_login') }}">Admin</a></li>
-            </ul>
-        </div>
-        <div id="footer footerBas">
+
+        <div id="" class="footerBas">
             <div class="row p-3">
                 <div class="col-md-4 footerInfo">
                     <p><strong>Derviche Diffusion © 2019</strong></p>
@@ -108,7 +101,14 @@
                     <p>tina.wolters@dervichediffusion.com</p>
                 </div>
             </div>
-
+        </div>
+        <div id="footer">
+            <a href="#intro" class="button style2 down anchored rotation"></a>
+            <ul class="menu">
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Politique de confidentialité</a></li>
+            </ul>
+            <a href="{{ path('app_security_login') }}">Admin</a>
         </div>
 
     </footer>
