@@ -2,19 +2,18 @@
 
 namespace App\Controller;
 
-use Composer\XdebugHandler\Status;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class IndexController extends AbstractController
+class FaqController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/faq")
      */
     public function index()
     {
-        return $this->render('index/index.html.twig');
+        return $this->render('faq/index.html.twig', [
+            'controller_name' => 'FaqController',
+        ]);
     }
-
-
 }
