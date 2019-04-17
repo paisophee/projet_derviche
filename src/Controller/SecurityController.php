@@ -32,7 +32,7 @@ class SecurityController extends AbstractController
                     $equipe->getPlainPassword()
                 );
 
-                $equipe->setPassword($password);
+                $equipe->setMdp($password);
 
                 $em = $this->getDoctrine()->getManager();
 
