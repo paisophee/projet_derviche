@@ -4548,7 +4548,7 @@ user-select: none; /* Standard */
     overflow: hidden;
   }
   /* doesnt play well with auto hiding */
-  #glider-persp {
+  .glider-persp {
     overflow: hidden;
   }
 }

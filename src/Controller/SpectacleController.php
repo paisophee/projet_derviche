@@ -6,10 +6,15 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class SpectacleController
+ * @package App\Controller
+ * @Route("/spectacles")
+ */
 class SpectacleController extends AbstractController
 {
     /**
-     * @Route("/spectacles")
+     * @Route("/")
      */
     public function index()
     {
