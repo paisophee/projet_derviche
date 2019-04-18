@@ -77,22 +77,34 @@ class Spectacle
      */
     private $id_spectateur;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Categorie", inversedBy="spectacles")
-     */
-    private $id_categorie;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\SousCategorie", inversedBy="spectacles")
      */
     private $id_sousCategorie;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Equipe", inversedBy="spectacles")
+     */
+    private $equipe;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\categorie", inversedBy="spectacles")
+     */
+    private $categorie;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\categorie", inversedBy="spectacles")
+     */
+    private $spectacle;
+
 
         /***************** FONCTION CONSTRUCT *********************/
 
     public function __construct()
     {
-        $this->id_categorie = new ArrayCollection();
+        $this->categorie = new ArrayCollection();
+        $this->spectacle = new ArrayCollection();
     }
 
 
@@ -223,32 +235,6 @@ class Spectacle
         return $this;
     }
 
-    /**
-     * @return Collection|Categorie[]
-     */
-    public function getIdCategorie(): Collection
-    {
-        return $this->id_categorie;
-    }
-
-    public function addIdCategorie(Categorie $idCategorie): self
-    {
-        if (!$this->id_categorie->contains($idCategorie)) {
-            $this->id_categorie[] = $idCategorie;
-        }
-
-        return $this;
-    }
-
-    public function removeIdCategorie(Categorie $idCategorie): self
-    {
-        if ($this->id_categorie->contains($idCategorie)) {
-            $this->id_categorie->removeElement($idCategorie);
-        }
-
-        return $this;
-    }
-
     public function getIdSousCategorie(): ?SousCategorie
     {
         return $this->id_sousCategorie;
@@ -257,6 +243,70 @@ class Spectacle
     public function setIdSousCategorie(?SousCategorie $id_sousCategorie): self
     {
         $this->id_sousCategorie = $id_sousCategorie;
+
+        return $this;
+    }
+
+    public function getEquipe(): ?Equipe
+    {
+        return $this->equipe;
+    }
+
+    public function setEquipe(?Equipe $equipe): self
+    {
+        $this->equipe = $equipe;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|categorie[]
+     */
+    public function getCategorie(): Collection
+    {
+        return $this->categorie;
+    }
+
+    public function addCategorie(categorie $categorie): self
+    {
+        if (!$this->categorie->contains($categorie)) {
+            $this->categorie[] = $categorie;
+        }
+
+        return $this;
+    }
+
+    public function removeCategorie(categorie $categorie): self
+    {
+        if ($this->categorie->contains($categorie)) {
+            $this->categorie->removeElement($categorie);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|categorie[]
+     */
+    public function getSpectacle(): Collection
+    {
+        return $this->spectacle;
+    }
+
+    public function addSpectacle(categorie $spectacle): self
+    {
+        if (!$this->spectacle->contains($spectacle)) {
+            $this->spectacle[] = $spectacle;
+        }
+
+        return $this;
+    }
+
+    public function removeSpectacle(categorie $spectacle): self
+    {
+        if ($this->spectacle->contains($spectacle)) {
+            $this->spectacle->removeElement($spectacle);
+        }
 
         return $this;
     }

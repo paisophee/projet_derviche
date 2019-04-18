@@ -30,20 +30,23 @@ class Categorie
      * Validation de l'image
      * @Assert\Image(mimeTypesMessage="Le fichier doit être une image",
      * maxSize="200k", maxSizeMessage="Le fichier ne doit pas faire plus de 200ko")
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="string", nullable=false)
      */
     private $image;
 
-
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Spectacle", mappedBy="id_categorie")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Spectacle", mappedBy="spectacle")
      */
     private $spectacles;
+
+
 
     public function __construct()
     {
         $this->spectacles = new ArrayCollection();
     }
+
+
 
     public function getId(): ?int
     {
@@ -80,6 +83,10 @@ class Categorie
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->type;
+    }
 
     /**
      * @return Collection|Spectacle[]
@@ -93,7 +100,7 @@ class Categorie
     {
         if (!$this->spectacles->contains($spectacle)) {
             $this->spectacles[] = $spectacle;
-            $spectacle->addIdCategorie($this);
+            $spectacle->addSpectacle($this);
         }
 
         return $this;
@@ -103,9 +110,10 @@ class Categorie
     {
         if ($this->spectacles->contains($spectacle)) {
             $this->spectacles->removeElement($spectacle);
-            $spectacle->removeIdCategorie($this);
+            $spectacle->removeSpectacle($this);
         }
 
         return $this;
     }
+
 }

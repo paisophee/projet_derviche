@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -64,6 +66,17 @@ class Lieu
      * @ORM\Column(type="integer")
      */
     private $jauge;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Personne", mappedBy="lieu")
+     */
+    private $personne;
+
+    public function __construct()
+    {
+        $this->personne = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -153,4 +166,36 @@ class Lieu
 
         return $this;
     }
+
+    /**
+     * @return Collection|Personne[]
+     */
+    public function getPersonne(): Collection
+    {
+        return $this->personne;
+    }
+
+    public function addPersonne(Personne $personne): self
+    {
+        if (!$this->personne->contains($personne)) {
+            $this->personne[] = $personne;
+            $personne->setLieu($this);
+        }
+
+        return $this;
+    }
+
+    public function removePersonne(Personne $personne): self
+    {
+        if ($this->personne->contains($personne)) {
+            $this->personne->removeElement($personne);
+            // set the owning side to null (unless already changed)
+            if ($personne->getLieu() === $this) {
+                $personne->setLieu(null);
+            }
+        }
+
+        return $this;
+    }
+
 }

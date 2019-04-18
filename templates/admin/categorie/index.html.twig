@@ -1,9 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CategorieController!{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
+<div class="container hauteurMin">
+    <h1 class="mt-5">Gestion des catégories</h1>
+    <p>
+        <a class="btn btn-outline-info my-2" href="{{ path('app_admin_categorie_edit') }}">
+            Ajouter une catégorie
+        </a>
+    </p>
 
-    <h1>Bonjour</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>Type de catégorie</th>
+            <th>Image</th>
+            <th width="250px">Actions</th>
+        </tr>
+        {% for categorie in categories  %}
+        <tr>
+            <td>{{ categorie.type }}</td>
+            <td>
+            {% if categorie.image is not null %}
+                <div>
+                    <img src="{{ asset('images/categorie/' ~ categorie.image) }}" width="20%">
+                </div>
+            {% endif %}
+            </td>
+            <td>
+                <a href="{{ path('app_admin_categorie_edit', {'id': categorie.id}) }}"
+                   class="btn btn-outline-info">Modifier</a>
+                <a href="{{ path('app_admin_categorie_delete', {'id': categorie.id}) }}"
+                   class="btn btn-outline-danger">Supprimer</a>
+            </td>
+        </tr>
+        {% endfor %}
 
+
+
+
+    </table>
+
+
+</div>
 {% endblock %}

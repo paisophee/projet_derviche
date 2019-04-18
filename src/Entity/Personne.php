@@ -62,10 +62,10 @@ class Personne
     private $email2;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Equipe", inversedBy="personnes")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Lieu", inversedBy="personne")
      */
-    private $equipe;
+    private $lieu;
+
 
 
 
@@ -158,15 +158,16 @@ class Personne
         return $this;
     }
 
-    public function getEquipe(): ?Equipe
+    public function getLieu(): ?Lieu
     {
-        return $this->equipe;
+        return $this->lieu;
     }
 
-    public function setEquipe(?Equipe $equipe): self
+    public function setLieu(?Lieu $lieu): self
     {
-        $this->equipe = $equipe;
+        $this->lieu = $lieu;
 
         return $this;
     }
+
 }
