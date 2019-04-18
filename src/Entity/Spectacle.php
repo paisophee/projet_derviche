@@ -75,13 +75,13 @@ class Spectacle
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Spectateur", inversedBy="spectacles")
      */
-    private $id_spectateur;
+    private $spectateur;
 
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\SousCategorie", inversedBy="spectacles")
      */
-    private $id_sousCategorie;
+    private $ssousCategorie;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Equipe", inversedBy="spectacles")
@@ -89,12 +89,12 @@ class Spectacle
     private $equipe;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\categorie", inversedBy="spectacles")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Categorie", inversedBy="spectacles")
      */
     private $categorie;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\categorie", inversedBy="spectacles")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Categorie", inversedBy="spectacles")
      */
     private $spectacle;
 
@@ -223,12 +223,12 @@ class Spectacle
         return $this;
     }
 
-    public function getIdSpectateur(): ?Spectateur
+    public function getSpectateur(): ?Spectateur
     {
-        return $this->id_spectateur;
+        return $this->spectateur;
     }
 
-    public function setIdSpectateur(?Spectateur $id_spectateur): self
+    public function setSpectateur(?Spectateur $id_spectateur): self
     {
         $this->id_spectateur = $id_spectateur;
 

@@ -27,7 +27,7 @@ class Spectateur
     private $type;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Spectacle", mappedBy="id_spectacle")
+     * @ORM\OneToMany(targetEntity="App\Entity\Spectacle", mappedBy="spectacle")
      */
     private $spectacles;
 
