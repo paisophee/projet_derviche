@@ -1,3 +1,18 @@
+/*general*/
+
+
+*:focus {
+
+    outline: none !important;
+
+}
+
+*::-moz-focus-inner {
+
+    border: none !important;
+
+}
+
 
 .hauteurMin{
     min-height: 70vh !important;
@@ -95,8 +110,6 @@ article:hover{
 }
 
 article::after {
-    content: "";
-    border-radius: 5px;
     position: absolute;
     z-index: -1;
     top: 0;
@@ -107,6 +120,7 @@ article::after {
     opacity: 0;
     -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
 }
 article:hover::after {
     opacity: 1;
@@ -119,11 +133,114 @@ article:hover::after {
 #footerBas{
     background-color: white;
     width: 100%;
+    box-shadow: -1px -4px 14px 3px rgba(0,0,0,0.69);
 }
 
 .footerInfo p{
-    font-size: 0.8em;
+    font-size: 0.7em;
     margin-bottom: 0em;
     margin-left: 20px;
     text-align: center;
 }
+
+
+
+
+/* Page Services */
+
+#pageservices {
+    background: url("images/overlay.png"), url("images/audience_derviche_fond.jpg");
+    background-size: 256px 256px, cover;
+    background-attachment: fixed, fixed;
+    background-position: top left, center center;
+
+}
+#pageservices2 {
+    background: url("images/overlay.png"), url("images/derviche fond services.jpg");
+    background-size: 256px 256px, cover;
+    background-attachment: fixed, fixed;
+    background-position: top left, center center;
+
+}
+#pageservices3 {
+    background: url("images/overlay.png"), url("images/derviche fond services.jpg");
+    background-size: 256px 256px, cover;
+    background-attachment: fixed, fixed;
+    background-position: top left, center center;
+
+}
+#pageservices4 {
+    background: url("images/overlay.png"), url("images/audience_derviche_fond.jpg");
+    background-size: 256px 256px, cover;
+    background-attachment: fixed, fixed;
+    background-position: top left, center center;
+
+}
+
+
+/* page faq*/
+
+.titre-faq{
+    font-size: 1.5em;
+}
+
+
+#accordion-list{
+    width: 100%;
+    margin: 0 auto;
+}
+
+#accordion-list i{
+    font-style: normal !important;
+}
+
+#accordion-list p{
+    font-size: 0.8em;
+}
+
+div.accordion-item{
+    display: none;
+}
+
+a.question {
+    /*background: #fafafe;*/
+    padding: 11px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: block;
+    border-bottom: 1px solid #e7e7e7;
+    position:relative;
+    text-decoration: none;
+    color: #2a2a2e;
+}
+a.question i {
+    position:absolute;
+    right:3%;
+    transition: 0.3s;
+}
+p.answer {
+    padding: 15px;
+    display: none;
+    background: rgba(255, 255, 255, 0.7);
+
+    margin-top:0;
+    color: #455;
+}
+
+
+a.active{
+
+}
+
+a.active i{
+    transform: rotate(90deg);
+}
+
+#blocTitreFaq {
+    background: url("images/overlay.png"), url("images/derviche fond faq.jpg");
+    background-size: 256px 256px, cover;
+    background-attachment: fixed, fixed;
+    background-position: top left, center center;
+
+}
+

@@ -21,7 +21,7 @@
     <section id="services" class="main style2 right dark fullscreen">
         <div class="content box style2">
 
-                <h2>NOS SERVICES</h2>
+                <h2 class="mb-3">NOS SERVICES</h2>
 
             <p>Derviche propose une approche singulière de la diffusion&nbsp;:</p>
             <ul class="list">
@@ -29,7 +29,7 @@
                 <li class="pb-2"><i class="fas fa-arrow-circle-right"></i> Innovante : une approche structurée et en base de données pour réduite les coûts et gagner en efficacité</li>
                 <li class="pb-2"><i class="fas fa-arrow-circle-right"></i> Solidaire : des réseaux mutualisés entre compagnies, des conseils et formations proposés à chaque étape, des services « à la carte » selon vos besoins et votre budget</li>
             </ul>
-            <a href="#" class="ensavoirplus">En savoir plus</a>
+            <a href="{{ path('app_pageservices_index') }}" class="ensavoirplus">En savoir plus</a>
         </div>
         <a href="#spectacle" class="button style2 down anchored">Next</a>
     </section>
@@ -49,7 +49,7 @@
             <div class="gallery">
                 <article class="from-left gallery-container">
                     <div class="image-container">
-                        <a href="#" class="image fit hover-shadow-text">
+                        <a href="{{ path('app_spectacle_index') }}" class="image fit hover-shadow-text">
                             <h3 class="text-categorie">Théâtre - <em>Jeune public</em></h3>
                             <img src="{{ asset('images/thumbs/jeun_public_thumbs.jpg') }}" title="jeune public" alt="theatre jeune public" />
                         </a>

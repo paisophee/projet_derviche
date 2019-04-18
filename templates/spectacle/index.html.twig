@@ -1,0 +1,730 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Derviche Diffusion | Nos Spectacles{% endblock %}
+
+{% block stylesheets %}
+        {{ parent() }}
+
+        <link rel="stylesheet" href="{{ asset('lib/Glider.js-master/glider.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/spectacle.css') }}">
+
+{% endblock %}
+
+{% block body %}
+<div class="container hauteurMin">
+        <h2 class="mt-5">Nos Spectacles</h2>
+        <button type="button" class="btn btn-outline-info btn-flitre mt-4">Flitrer</button>
+        <div class="filtre mt-4"></div>
+
+        <div id="all-spectacle">
+<!----------jeune public - theatre glider1------------------------------------------------------->
+                <div class="spectacle persp mt-5">
+                        <h3 class="mb-2">Jeune public-Théâtre</h3>
+                        <div data-name="Perspective View" class="glider-contain multiple">
+                                <div class="glider glider-persp" id="Jeune-public-Theatre">
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <button role="button" aria-label="Previous" class="glider-prev" id="glider-prev-per"><i class="fa fa-chevron-left"></i></button>
+                                <button role="button" aria-label="Next" class="glider-next" id="glider-next-per"><i class="fa fa-chevron-right"></i></button>
+                                <div class="dots glider-dots"></div>
+
+                        </div>
+                </div>
+
+
+<!----------jeune public - theatre & musique glider2------------------------------------------------------->
+                <div class="spectacle persp mt-5">
+                        <h3 class="mb-2">Jeune public - Théâtre & Musique</h3>
+                        <div data-name="Perspective View" class="glider-contain multiple">
+                                <div class="glider2 glider-persp" id="">
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <button role="button" aria-label="Previous" class="glider-prev" id="glider-prev-per"><i class="fa fa-chevron-left"></i></button>
+                                <button role="button" aria-label="Next" class="glider-next" id="glider-next-per"><i class="fa fa-chevron-right"></i></button>
+                                <div class="dots glider-dots"></div>
+
+                        </div>
+                </div>
+
+
+<!----------jeune public - theatre & danse glider3------------------------------------------------------->
+                <div class="spectacle persp mt-5">
+                        <h3 class="mb-2">Jeune public - Théâtre & Danse</h3>
+                        <div data-name="Perspective View" class="glider-contain multiple">
+                                <div class="glider3 glider-persp" id="">
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <button role="button" aria-label="Previous" class="glider-prev" id="glider-prev-per"><i class="fa fa-chevron-left"></i></button>
+                                <button role="button" aria-label="Next" class="glider-next" id="glider-next-per"><i class="fa fa-chevron-right"></i></button>
+                                <div class="dots glider-dots"></div>
+
+                        </div>
+                </div>
+
+
+<!----------adolescence glider4------------------------------------------------------->
+                <div class="spectacle persp mt-5">
+                        <h3 class="mb-2">Adolescence</h3>
+                        <div data-name="Perspective View" class="glider-contain multiple">
+                                <div class="glider4 glider-persp" id="">
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <button role="button" aria-label="Previous" class="glider-prev" id="glider-prev-per"><i class="fa fa-chevron-left"></i></button>
+                                <button role="button" aria-label="Next" class="glider-next" id="glider-next-per"><i class="fa fa-chevron-right"></i></button>
+                                <div class="dots glider-dots"></div>
+
+                        </div>
+                </div>
+
+
+<!----------danse glider 5------------------------------------------------------->
+                <div class="spectacle persp mt-5">
+                        <h3 class="mb-2">Danse</h3>
+                        <div data-name="Perspective View" class="glider-contain multiple">
+                                <div class="glider5 glider-persp" id="">
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <button role="button" aria-label="Previous" class="glider-prev" id="glider-prev-per"><i class="fa fa-chevron-left"></i></button>
+                                <button role="button" aria-label="Next" class="glider-next" id="glider-next-per"><i class="fa fa-chevron-right"></i></button>
+                                <div class="dots glider-dots"></div>
+
+                        </div>
+                </div>
+
+
+<!----------theatre classique glider 6------------------------------------------------------->
+                <div class="spectacle persp mt-5">
+                        <h3 class="mb-2">Théâtre Classique</h3>
+                        <div data-name="Perspective View" class="glider-contain multiple">
+                                <div class="glider6 glider-persp" id="">
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <button role="button" aria-label="Previous" class="glider-prev" id="glider-prev-per"><i class="fa fa-chevron-left"></i></button>
+                                <button role="button" aria-label="Next" class="glider-next" id="glider-next-per"><i class="fa fa-chevron-right"></i></button>
+                                <div class="dots glider-dots"></div>
+
+                        </div>
+                </div>
+
+
+<!----------theatre humour glider 7------------------------------------------------------->
+                <div class="spectacle persp mt-5">
+                        <h3 class="mb-2">Théâtre Humour</h3>
+                        <div data-name="Perspective View" class="glider-contain multiple">
+                                <div class="glider7 glider-persp" id="">
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <button role="button" aria-label="Previous" class="glider-prev" id="glider-prev-per"><i class="fa fa-chevron-left"></i></button>
+                                <button role="button" aria-label="Next" class="glider-next" id="glider-next-per"><i class="fa fa-chevron-right"></i></button>
+                                <div class="dots glider-dots"></div>
+
+                        </div>
+                </div>
+
+
+<!----------theatre seul en scene glider 8------------------------------------------------------->
+                <div class="spectacle persp mt-5">
+                        <h3 class="mb-2">Théâtre Seul.e en scène</h3>
+                        <div data-name="Perspective View" class="glider-contain multiple">
+                                <div class="glider8 glider-persp" id="">
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <button role="button" aria-label="Previous" class="glider-prev" id="glider-prev-per"><i class="fa fa-chevron-left"></i></button>
+                                <button role="button" aria-label="Next" class="glider-next" id="glider-next-per"><i class="fa fa-chevron-right"></i></button>
+                                <div class="dots glider-dots"></div>
+
+                        </div>
+                </div>
+
+
+<!----------theatre contemporain glider 9------------------------------------------------------->
+                <div class="spectacle persp mt-5">
+                        <h3 class="mb-2">Théâtre Contemporain</h3>
+                        <div data-name="Perspective View" class="glider-contain multiple">
+                                <div class="glider9 glider-persp" id="">
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <button role="button" aria-label="Previous" class="glider-prev" id="glider-prev-per"><i class="fa fa-chevron-left"></i></button>
+                                <button role="button" aria-label="Next" class="glider-next" id="glider-next-per"><i class="fa fa-chevron-right"></i></button>
+                                <div class="dots glider-dots"></div>
+
+                        </div>
+                </div>
+
+
+<!----------cirque mime performance glider 10------------------------------------------------------->
+                <div class="spectacle persp mt-5">
+                        <h3 class="mb-2">Cirque - Mime - Performance</h3>
+                        <div data-name="Perspective View" class="glider-contain multiple">
+                                <div class="glider10 glider-persp" id="">
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="gradient-border-bottom">
+                                                        <div class="gradient-border">
+                                                                <a href="#">
+                                                                        <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" alt="">
+                                                                        <h6>Le train de Noel</h6>
+                                                                        <p>CIE CONTREPIED PRODUCTIONS</p>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                </div>
+                                <button role="button" aria-label="Previous" class="glider-prev" id="glider-prev-per"><i class="fa fa-chevron-left"></i></button>
+                                <button role="button" aria-label="Next" class="glider-next" id="glider-next-per"><i class="fa fa-chevron-right"></i></button>
+                                <div class="dots glider-dots"></div>
+
+                        </div>
+                </div>
+
+        </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+        {{ parent() }}
+        <script src="{{ asset('lib/Glider.js-master/glider.js') }}"></script>
+        <script src="{{ asset('js/spectacle.js') }}"></script>
+{% endblock %}

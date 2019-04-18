@@ -1,10 +1,13 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Login{% endblock %}
 {% block body %}
-
+<div class="container hauteurMin">
 
     <div class="container">
+
+
         <div class="row mt-5">
+
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <h1>Connexion</h1>
@@ -21,11 +24,21 @@
                         <button type="submit" class="btn btn-info">
                             Se connecter
                         </button>
+
                     </div>
                 </form>
+                <h5 class="text-center">Pas encore de compte ?</h5>
+                <h5 class="text-center"><span class="text-info"><a href="{{ path('app_security_register') }}">Inscrivez-vous !</a></span></h5>
             </div>
         </div>
     </div>
+
+
+
+
+
+
+</div>
 
 {% endblock %}
 
