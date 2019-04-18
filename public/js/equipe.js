@@ -1,5 +1,3 @@
-
-
 $(function () {
     $('.btn-delete').click(function (event) {
         // empêche d'aller vers la page de suppression
@@ -18,27 +16,6 @@ $(function () {
     })
 });
 
-$('.btn-ajout').click(function (event) {
-    event.preventDefault();
-
-    var href = $(this).attr('href');
-
-    $.get(
-        href,
-        function (response) {
-
-            var $modal = $('#modal-ajout-personne');
-
-            // retour en texte brut
-            $modal.find('.modal-body').html(response);
-
-            // retour en JSON
-            //$modal.find('.modal-body').html(response.content);
-
-            $modal.modal('show');
-        }
-    );
-});
 
 
 
