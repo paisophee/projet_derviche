@@ -1,11 +1,48 @@
 {% extends 'base.html.twig' %}
+
 {% block body %}
-<div class="container hauteurMin">
-    <h1 class="mt-5">Accueil</h1>
+<section id="spectacle" class="main style3 primary">
+    <div class="content">
+        <div class="container hauteurMin">
+            <h1 class="mt-5">Accueil</h1>
 
+            <div class="gallery">
+                <article class="from-left gallery-container">
+                    <div class="image-container">
+                        <a href="{{ path('app_admin_equipe_index') }}" class="image fit hover-shadow-text">
+                            <h3 class="text-categorie">Gestion équipe</h3>
+                            <img src="{{ asset('images/thumbs/jeun_public_thumbs.jpg') }}" title="jeune public" alt="theatre jeune public" />
+                        </a>
+                    </div>
+                </article>
 
+                <article class="from-right">
+                    <div class="image-container">
+                        <a href="{{ path('app_admin_categorie_index') }}" class="image fit hover-shadow-text">
+                            <h3 class="text-categorie">Gestion des catégories</h3>
+                            <img src="{{ asset('images/thumbs/jeun_public_music_thumbs.jpg') }}" title="jeune public" alt="theatre jeune public" /></a>
+                    </div>
+                </article>
 
-</div>
+                <article class="from-left">
+                    <div class="image-container">
+                        <a href="#" class="image fit hover-shadow-text">
+                            <h3 class="text-categorie">Gestion des spectacles</h3>
+                            <img src="{{ asset('images/thumbs/jeun_public_theatre_danse_thumbs.jpg') }}" title="jeune public" alt="theatre danse jeune public" />
+                        </a>
+                    </div>
+                </article>
 
+                <article class="from-right">
+                    <div class="image-container">
+                        <a href="#" class="image fit hover-shadow-text">
+                            <h3 class="text-categorie">Gestion des lieux</h3>
+                            <img src="{{ asset('images/thumbs/ado_thumbs.jpg') }}" title="jeune public" alt="theatre jeune public" /></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
