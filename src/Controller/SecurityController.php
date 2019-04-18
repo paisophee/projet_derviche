@@ -16,7 +16,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
  * Class SecurityController
  * @package App\Controller
  *
- * @Route("/admin")
+ * @Route("/")
  */
 class SecurityController extends AbstractController
 {

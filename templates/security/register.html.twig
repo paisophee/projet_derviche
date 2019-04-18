@@ -4,6 +4,12 @@
 
     <div class="container hauteurMin">
         <h1>Inscription</h1>
+        <button class="btn btn-warning">
+            <a href="{{ path('app_admin_equipe_index') }}">
+                Retour
+            </a>
+
+        </button>
 
         {{ form_start(form) }}
         {{ form_row(form.nom) }}
@@ -12,11 +18,14 @@
         {{ form_row(form.plainPassword) }}
         {{ form_row(form.statut) }}
         <div class="text-right">
+
             <button type="submit" class="btn btn-primary">
                 Enregistrer
             </button>
+
         </div>
         {{ form_end(form) }}
+
     </div>
 {% endblock %}
 
