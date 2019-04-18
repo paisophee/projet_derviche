@@ -3,16 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Derviche Diffusion{% endblock %}</title>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('css/images/favicon.png') }}"/>
         <meta name="description" content="Une structure de diffusion accessible, transparente et mutualiste. Comme les derviches tourneurs, tous les spectacles vivants ont besoin de tourner pour vivre et grandir !">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
         {% block stylesheets %}
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
             <link rel="stylesheet" href="{{ asset('lib/bootstrap/bootstrap.min.css') }}">
             <link rel="stylesheet" href="{{ asset('css/main.css') }}">
             <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
 
             <noscript><link rel="stylesheet" href="{{ asset('css/noscript.css') }}"></noscript>
 
@@ -64,20 +68,25 @@
 
     <!-- Header -->
     <header id="header">
-        <h1>Derviche Diffusion</h1>
+        <a href="{{ path('app_index_index') }} "><h1>Derviche Diffusion</h1></a>
         <nav>
             <ul>
-                <li><a href="#intro">Accueil</a></li>
-                <li><a href="#services">Nos services</a></li>
-                <li><a href="#">Nos spectacles</a></li>
-                <li><a href="#two">FAQ</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="{{ path('app_index_index') }} ">Accueil</a></li>
+                <li><a href="{{ path('app_pageservices_index') }} ">Nos services</a></li>
+                <li><a href="{{ path('app_spectacle_index') }} ">Nos spectacles</a></li>
+                <li><a href="{{ path('app_faq_index') }} ">FAQ</a></li>
+                <li><a href="{{ path('app_index_contact') }} ">Contact</a></li>
+                <!--
                 <li><a href="#">Se connecter/S'inscrire</a></li>
+                -->
 
             </ul>
         </nav>
     </header>
 
+    <div class="container">
+
+    </div>
 
 
         {% block body %}{% endblock %}
@@ -85,15 +94,8 @@
 
 
     <footer >
-        <div id="footer">
-            <a href="#intro" class="button style2 down anchored rotation"></a>
-            <ul class="menu">
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="#">Politique de confidentialité</a></li>
-                <li><a href="{{ path('app_security_login') }}">Admin</a></li>
-            </ul>
-        </div>
-        <div id="footer footerBas">
+
+        <div id="" class="footerBas">
             <div class="row p-3">
                 <div class="col-md-4 footerInfo">
                     <p><strong>Derviche Diffusion © 2019</strong></p>
@@ -108,7 +110,14 @@
                     <p>tina.wolters@dervichediffusion.com</p>
                 </div>
             </div>
-
+        </div>
+        <div id="footer">
+            <a href="#intro" class="button style2 down anchored rotation"></a>
+            <ul class="menu">
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Politique de confidentialité</a></li>
+            </ul>
+            <a href="{{ path('app_security_login') }}">Admin</a>
         </div>
 
     </footer>

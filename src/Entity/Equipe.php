@@ -68,14 +68,14 @@ class Equipe implements UserInterface
     private $plainPassword;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Personne", mappedBy="equipe")
+     * @ORM\OneToMany(targetEntity="App\Entity\Spectacle", mappedBy="equipe")
      */
-    private $personne;
+    private $spectacle;
 
     public function __construct()
     {
-        $this->personne = new ArrayCollection();
-    }  // = mot de passe en clair
+        $this->spectacle = new ArrayCollection();
+    } // = mot de passe en clair
 
 
 
@@ -206,7 +206,7 @@ class Equipe implements UserInterface
      */
     public function getSalt()
     {
-
+        // TODO: Implement getSalt() method.
     }
 
     /**
@@ -231,34 +231,35 @@ class Equipe implements UserInterface
     }
 
     /**
-     * @return Collection|Personne[]
+     * @return Collection|spectacle[]
      */
-    public function getPersonne(): Collection
+    public function getSpectacle(): Collection
     {
-        return $this->personne;
+        return $this->spectacle;
     }
 
-    public function addPersonne(Personne $personne): self
+    public function addSpectacle(spectacle $spectacle): self
     {
-        if (!$this->personne->contains($personne)) {
-            $this->personne[] = $personne;
-            $personne->setEquipe($this);
+        if (!$this->spectacle->contains($spectacle)) {
+            $this->spectacle[] = $spectacle;
+            $spectacle->setEquipe($this);
         }
 
         return $this;
     }
 
-    public function removePersonne(Personne $personne): self
+    public function removeSpectacle(spectacle $spectacle): self
     {
-        if ($this->personne->contains($personne)) {
-            $this->personne->removeElement($personne);
+        if ($this->spectacle->contains($spectacle)) {
+            $this->spectacle->removeElement($spectacle);
             // set the owning side to null (unless already changed)
-            if ($personne->getEquipe() === $this) {
-                $personne->setEquipe(null);
+            if ($spectacle->getEquipe() === $this) {
+                $spectacle->setEquipe(null);
             }
         }
 
         return $this;
     }
+
 
 }

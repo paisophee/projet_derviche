@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div id="blocTitreContact" class="main style2 dark fullscreen">
+
+    <div class="container hauteurMin">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="m-5 text-center titre-faq">Contact</h1>
+            </div>
+        </div>
+        {# affichage des messages flash #}
+        {% for type, messages in app.session.flashBag.all %}
+            {% for message in messages %}
+                {#pour la classe alert-danger de bootstrap#}
+                {% if type == 'error' %}
+                    {% set type = 'danger' %}
+                {% endif %}
+                <div class="alert alert-{{ type }} mt-2">
+                    {{ message|raw }} {#|raw pour autoriser le html dans le message#}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+
+
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-6">
+                {{ form_row(form.firstname) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_row(form.lastname) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                {{ form_row(form.statut) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_row(form.email) }}
+            </div>
+        </div>
+
+        {{ form_row(form.objet) }}
+        {{ form_row(form.body) }}
+
+        <div class="text-right">
+            <button class="btn btn-info mt-4" type="submit">Envoyer</button>
+        </div>
+        {{ form_end(form) }}
+
+    </div>
+</div>
+
+{% endblock %}
+
