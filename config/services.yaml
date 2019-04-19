@@ -7,7 +7,7 @@ parameters:
     locale: 'fr'
     #repertoire d'upload d'images
     # %kernel.project_dir% = la racine du projet
-    upload_dir_categorie: '%kernel.project_dir%/public/images/categorie'
+    upload_dir_categorie: '%kernel.project_dir%/public/images/categorie/'
 
 services:
     # default configuration for services in *this* file
