@@ -41,11 +41,17 @@
                                 Gestion équipe
                             </a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_admin_categorie_index') }} ">
-                                Gestion des catégories
-                            </a>
+                            <div class="dropdown show">
+                                <a class="dropdown-toggle nav-link" href="#" role="button"
+                                   id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                   Gestion des catégories
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="{{ path('app_admin_categorie_index') }}">Catégorie</a>
+                                    <a class="dropdown-item" href="{{ path('app_admin_souscategorie_index') }}">Sous catégorie</a>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('app_admin_spectacles_index') }} ">
@@ -128,7 +134,6 @@
     </div>
 
     <footer >
-
         <div id="" class="footerBas">
             <div class="row p-3">
                 <div class="col-md-4 footerInfo">

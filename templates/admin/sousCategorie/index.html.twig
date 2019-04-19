@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container hauteurMin">
+    <h1 class="my-5">Gestion des sous catégories</h1>
+    <p>
+        <a class="btn btn-outline-info my-2" href="{{ path('app_admin_souscategorie_edit') }}">
+            Ajouter une sous catégorie
+        </a>
+    </p>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Type sous catégorie</th>
+            <th>Image</th>
+            <th width="120px" class="text-center">Actions</th>
+        </tr>
+        {% for sousCategorie in sousCategories  %}
+            <tr>
+                <td>{{ sousCategorie.type }}</td>
+                <td class="text-center">
+                    {% if sousCategorie.image is not null %}
+                        <div>
+                            <img src="{{ asset('images/sousCategorie/' ~ sousCategorie.image) }}" width="150px">
+                        </div>
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{{ path('app_admin_souscategorie_edit', {'id': sousCategorie.id}) }}"
+                       class="btn btn-outline-info">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a href="{{ path('app_admin_souscategorie_delete') }}"
+                       class="btn btn-outline-danger btn-delete">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

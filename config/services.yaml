@@ -9,7 +9,7 @@ parameters:
     #%kernel.project_dir% = la racine du projet
     upload_dir_spectacle: '%kernel.project_dir%/public/images/spectacles/'
     upload_dir_categorie: '%kernel.project_dir%/public/images/categorie/'
-
+    upload_dir_sousCategorie: '%kernel.project_dir%/public/images/sousCategorie/'
 
 services:
     # default configuration for services in *this* file
