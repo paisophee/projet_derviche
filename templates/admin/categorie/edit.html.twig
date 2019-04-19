@@ -3,6 +3,9 @@
 {% block body %}
 <div class="container hauteurMin">
     <h1 class="mt-5">Edition catégorie</h1>
+    <a class="btn btn-outline-info my-2" href="{{ path('app_admin_categorie_index') }}">
+        Retour
+    </a>
 
 
     {# ouvre la balise form #}
@@ -10,10 +13,18 @@
 
     {{ form_row(form.type) }}
     {{ form_row(form.image) }}
+    <div class="row my-4">
+        <div class="col-md-4">
+            {% if original_image is not null %}
+                <p>Actuellement :
+                    <img src="{{ asset('images/categorie/'~ original_image) }}" height="200px">
+                </p>
+            {% endif %}
+        </div>
+    </div>
 
     <div class="text-right">
-        <button type="submit" class="btn btn-primary">Enregistrer</button>
-        <a class="btn btn-outline-info" href="{{ path('app_admin_categorie_index') }}">Retour</a>
+        <button type="submit" class="btn btn-outline-info my-3">Enregistrer</button>
     </div>
 
     {# ferme la balise form #}

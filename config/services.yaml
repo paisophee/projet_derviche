@@ -4,10 +4,12 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: 'fr'
-    #repertoire d'upload d'images
-    # %kernel.project_dir% = la racine du projet
+    locale: 'en'
+    #répertoire d'upload d'images
+    #%kernel.project_dir% = la racine du projet
+    upload_dir_spectacle: '%kernel.project_dir%/public/images/spectacles/'
     upload_dir_categorie: '%kernel.project_dir%/public/images/categorie/'
+
 
 services:
     # default configuration for services in *this* file

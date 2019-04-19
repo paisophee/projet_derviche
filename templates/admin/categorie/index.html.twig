@@ -3,44 +3,48 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-<div class="container hauteurMin">
-    <h1 class="mt-5">Gestion des catégories</h1>
-    <p>
-        <a class="btn btn-outline-info my-2" href="{{ path('app_admin_categorie_edit') }}">
-            Ajouter une catégorie
-        </a>
-    </p>
+    <div class="container hauteurMin">
+        <h1 class="mt-5">Gestion des catégories</h1>
+        <p>
+            <a class="btn btn-outline-info my-2" href="{{ path('app_admin_categorie_edit') }}">
+                Ajouter une catégorie
+            </a>
+        </p>
 
-    <table class="table table-bordered">
-        <tr>
-            <th>Type de catégorie</th>
-            <th>Image</th>
-            <th width="250px">Actions</th>
-        </tr>
-        {% for categorie in categories  %}
-        <tr>
-            <td>{{ categorie.type }}</td>
-            <td>
-            {% if categorie.image is not null %}
-                <div>
-                    <img src="{{ asset('images/categorie/' ~ categorie.image) }}" width="20%">
-                </div>
-            {% endif %}
-            </td>
-            <td>
-                <a href="{{ path('app_admin_categorie_edit', {'id': categorie.id}) }}"
-                   class="btn btn-outline-info">Modifier</a>
-                <a href="{{ path('app_admin_categorie_delete', {'id': categorie.id}) }}"
-                   class="btn btn-outline-danger">Supprimer</a>
-            </td>
-        </tr>
-        {% endfor %}
+        <table class="table table-bordered">
+            <tr>
+                <th class="text-center">Type de catégorie</th>
+                <th class="text-center">Image</th>
+                <th width="120px" class="text-center">Actions</th>
+            </tr>
+            {% for categorie in categories  %}
+                <tr>
+                    <td>{{ categorie.type }}</td>
+                    <td class="text-center">
+                        {% if categorie.image is not null %}
+                            <div>
+                                <img src="{{ asset('images/categorie/' ~ categorie.image) }}" width="150px">
+                            </div>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{{ path('app_admin_categorie_edit', {'id': categorie.id}) }}"
+                           class="btn btn-outline-info">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="{{ path('app_admin_categorie_delete', {'id': categorie.id}) }}"
+                           class="btn btn-outline-danger btn-delete">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
 
 
 
 
-    </table>
+        </table>
 
 
-</div>
+    </div>
 {% endblock %}

@@ -48,7 +48,7 @@ class CategorieController extends AbstractController
         // creation
         if(is_null($id)){
             $categorie = new Categorie();
-        //modification
+            //modification
         }else{
             $categorie = $em->find(Categorie::class, $id);
 
@@ -88,8 +88,8 @@ class CategorieController extends AbstractController
 
                     //déplace l'image uploadée
                     $image->move(
-                        // vers le répertoire /public/images/categorie
-                        // cf config -> service.yaml
+                    // vers le répertoire /public/images/categorie
+                    // cf config -> service.yaml
                         $this->getParameter('upload_dir_categorie'), $filename
                     );
                     // on sette l'attribut image de l'article avec son nom pour enregistrement en bdd
@@ -115,7 +115,8 @@ class CategorieController extends AbstractController
         return $this->render(
             'admin/categorie/edit.html.twig',
             [
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'original_image' => $originalImage
             ]
         );
     }

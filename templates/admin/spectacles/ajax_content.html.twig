@@ -1,0 +1,9 @@
+<h1 class="my-3">{{ spectacle.titre }}</h1>
+
+<div class="row text-center my-4">
+    <div class="col-md">
+        {% if spectacle.image1 is not null %}
+            <img src="{{ asset('images/spectacles/'~ spectacle.image1) }}" width="250px">
+        {% endif %}
+    </div>
+</div>

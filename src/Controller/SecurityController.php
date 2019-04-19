@@ -20,6 +20,27 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
  */
 class SecurityController extends AbstractController
 {
+
+
+    /**
+     * @Route("admin/equipe")
+     */
+    public function index()
+    {
+
+        $repository = $this->getDoctrine()->getRepository(Equipe::class);
+        $employes = $repository->findBy([], ['nom' => 'ASC']);
+
+        return $this->render(
+            'admin/equipe/index.html.twig',
+            [
+                'employes' => $employes
+            ]
+        );
+
+    }
+
+
     /**
      * @Route("/inscription/{id}", defaults={"id": null}, requirements={"id": "\d+"})
      */
@@ -33,36 +54,36 @@ class SecurityController extends AbstractController
         if (is_null($id)) {
             $employe = new Equipe();
         } else { // modification
-                $employe = $em->find(Equipe::class,$id);
-                if (is_null($employe)) {
-                    throw new NotFoundHttpException();
-                }
+            $employe = $em->find(Equipe::class,$id);
+            if (is_null($employe)) {
+                throw new NotFoundHttpException();
             }
+        }
 
-            $form = $this->createForm(EquipeType::class, $employe);
-            $form->handleRequest($request);
+        $form = $this->createForm(EquipeType::class, $employe);
+        $form->handleRequest($request);
 
-            if ($form->isSubmitted()) {
-                if ($form->isValid()) {
-                    $mdp = $passwordEncoder->encodePassword(
-                        $employe,
-                        $employe->getPlainPassword()
-                    );
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $mdp = $passwordEncoder->encodePassword(
+                    $employe,
+                    $employe->getPlainPassword()
+                );
 
-                    $employe->setMdp($mdp);
+                $employe->setMdp($mdp);
 
-                    $em = $this->getDoctrine()->getManager();
+                $em = $this->getDoctrine()->getManager();
 
-                    $em->persist($employe);
-                    $em->flush();
+                $em->persist($employe);
+                $em->flush();
 
-                    $this->addFlash('success', 'Le compte a bien été créé');
+                $this->addFlash('success', 'Le compte a bien été créé');
 
-                    return $this->redirectToRoute('app_admin_equipe_index');
-                } else {
-                    $this->addFlash('error', 'Le formulaire contient des erreurs');
-                }
+                return $this->redirectToRoute('app_security_index');
+            } else {
+                $this->addFlash('error', 'Le formulaire contient des erreurs');
             }
+        }
 
         return $this->render(
             'security/register.html.twig',
@@ -99,4 +120,27 @@ class SecurityController extends AbstractController
     {
 
     }
+
+    /**
+     * @Route("/suppression/{id}")
+     */
+
+
+    public function delete(Equipe $employe)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $em->remove($employe);
+        $em->flush();
+
+        $this->addFlash('success', 'L\'employé(e) a bien été supprimé(e)');
+
+
+        return $this->redirectToRoute('app_security_index');
+    }
+
+
+
+
+
 }

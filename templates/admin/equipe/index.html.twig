@@ -3,21 +3,22 @@
 {% block body %}
 
     <div class="container hauteurMin">
-        <h1>Gestion équipe</h1>
+        <h1 class="mt-5">Gestion équipe</h1>
+        <p>
+            <a href="{{ path('app_security_register') }}"
+               class="btn btn-outline-info my-2">
+                Ajouter un(e) employé(e)
+            </a>
+        </p>
 
-        <a href="{{ path('app_security_register') }}"
-           class="btn btn-outline-info mb-3">
-            Ajouter un(e) employé(e)
-        </a>
-
-        <table class="table">
+        <table class="table table-bordered">
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Email</th>
                 <th>Statut</th>
-                <th width="250px"></th>
+                <th width="120px">Actions</th>
             </tr>
             {% for employe in employes %}
                 <tr>
@@ -28,41 +29,20 @@
                     <td>{{ employe.statut }}</td>
                     <td>
                         <a href="{{ path('app_security_register', {'id': employe.id}) }}"
-                           class="btn btn-primary">
-                            Modifier
+                           class="btn btn-outline-info">
+                            <i class="fas fa-edit"></i>
                         </a>
-                        <a href="{{ path('app_admin_equipe_delete', {'id': employe.id}) }}"
-                           class="btn btn-danger btn-delete">
-                            Supprimer
+                        <a href="{{ path('app_security_delete', {'id': employe.id}) }}"
+                           class="btn btn-outline-danger btn-delete">
+                            <i class="fas fa-trash-alt"></i>
                         </a>
                     </td>
                 </tr>
             {% endfor %}
         </table>
 
-        {# modal confirmation suppression #}
-        <div class="modal" tabindex="-1" role="dialog" id="modal-confirm-delete">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Confirmation suppression&nbsp;?</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-confirm-delete">Oui</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
     </div>
 {% endblock %}
 
-
-{% block javascripts %}
-    {{ parent() }}
-    <script src="{{ asset('js/equipe.js') }}"></script>
-{% endblock %}

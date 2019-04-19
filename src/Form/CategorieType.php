@@ -29,7 +29,7 @@ class CategorieType extends AbstractType
                 FileType::class,
                 [
                     'label' => 'Image',
-                    'data_class' => null
+                    'required' => false
                 ]
             );
     }
@@ -37,7 +37,7 @@ class CategorieType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Categorie::class,
-        ]);
+                                   'data_class' => Categorie::class,
+                               ]);
     }
 }

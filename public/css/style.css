@@ -244,3 +244,29 @@ a.active i{
 
 }
 
+/*flashbag*/
+
+.flashbag{
+    position: absolute;
+    top: 48%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -330%); /* décalage de 50% de sa propre taille */
+    z-index: 9999 !important;
+}
+
+
+button.close:hover{
+    background-color: unset;
+}
+
+/*modal suppression*/
+.modal-dialog{
+    margin: 5rem auto;
+}
+
+
+/* contour degueu*/
+*:focus{
+    /*outline: none !important;*/
+    box-shadow: none !important;
+}
+

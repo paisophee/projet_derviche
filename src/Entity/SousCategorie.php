@@ -24,7 +24,7 @@ class SousCategorie
     private $type;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Spectacle", mappedBy="id_sousCategorie")
+     * @ORM\OneToMany(targetEntity="App\Entity\Spectacle", mappedBy="sousCategorie")
      */
     private $spectacles;
 
@@ -32,7 +32,6 @@ class SousCategorie
     {
         $this->spectacles = new ArrayCollection();
     }
-
 
     public function getId(): ?int
     {
@@ -63,7 +62,7 @@ class SousCategorie
     {
         if (!$this->spectacles->contains($spectacle)) {
             $this->spectacles[] = $spectacle;
-            $spectacle->setIdSousCategorie($this);
+            $spectacle->setSousCategorie($this);
         }
 
         return $this;
@@ -74,12 +73,11 @@ class SousCategorie
         if ($this->spectacles->contains($spectacle)) {
             $this->spectacles->removeElement($spectacle);
             // set the owning side to null (unless already changed)
-            if ($spectacle->getIdSousCategorie() === $this) {
-                $spectacle->setIdSousCategorie(null);
+            if ($spectacle->getSousCategorie() === $this) {
+                $spectacle->setSousCategorie(null);
             }
         }
 
         return $this;
     }
-
 }
