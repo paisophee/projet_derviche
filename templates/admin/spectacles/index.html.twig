@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin | Spectacles{% endblock %}
+
+{% block body %}
+    <div class="container hauteurMin">
+
+        <h1 class="mt-5">Gestion des Spectacles</h1>
+        <p>
+            <a class="btn btn-outline-info my-2" href="{{ path('app_admin_spectacles_edit') }}">Ajouter un spectacle</a>
+        </p>
+
+        <table class="table table-bordered">
+            <tr>
+                <th class="text-center">Titre du spectacle</th>
+                <th class="text-center">Nom de la cie</th>
+                <th class="text-center">Catégorie</th>
+                <th class="text-center">Sous-Catégorie</th>
+                <th class="text-center">Spectateur</th>
+                <th class="text-center" width="350px">Photos</th>
+                <th class="text-center" width="120px">Actions</th>
+            </tr>
+            {% for spectacle in spectacles  %}
+                <tr>
+                    <td>{{ spectacle.titre }}</td>
+                    <td>{{ spectacle.nomCie }}</td>
+                    <td>{% for categorie in spectacle.categorie %}
+                            {{ categorie }}<br>
+                        {% endfor %}</td>
+                    <td>{{ spectacle.sousCategorie.type }}</td>
+                    <td>{{ spectacle.spectateur.type }}</td>
+
+                    <td>
+                        {% if spectacle.image1 is not null %}
+                            <div>
+                                <img src="{{ asset('images/spectacles/' ~ spectacle.image1) }}" width="100px">
+                                <img src="{{ asset('images/spectacles/' ~ spectacle.image2) }}" width="100px">
+                                <img src="{{ asset('images/spectacles/' ~ spectacle.image3) }}" width="100px">
+                            </div>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{{ path('app_admin_spectacles_edit', {'id': spectacle.id}) }}"
+                           class="btn btn-outline-info">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="{{ path('app_admin_spectacles_delete', {'id': spectacle.id}) }}"
+                           class="btn btn-outline-danger btn-delete">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                        {#<a href="{{ path('app_admin_spectacle_ajaxcontent',{'id' : spectacle.id }) }}" class="btn btn-outline-secondary btn-article-content"><i class="fas fa-eye"></i></a>#}
+                    </td>
+                </tr>
+            {% endfor %}
+
+
+
+
+        </table>
+
+    </div>
+
+
+{% endblock %}

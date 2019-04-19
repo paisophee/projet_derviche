@@ -28,6 +28,7 @@
 
     <!-- utilisateur connecté == ROLE_ADMIN  -->
     {% if is_granted('ROLE_ADMIN') %}
+
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container navbar-nav">
                 <a class="navbar-brand" href="{{ path('app_admin_accueil_index') }} ">
@@ -36,25 +37,28 @@
                 <div class="navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{ path('app_security_index') }} ">
                                 Gestion équipe
                             </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{ path('app_admin_categorie_index') }} ">
                                 Gestion des catégories
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#}">
+                            <a class="nav-link" href="{{ path('app_admin_spectacles_index') }} ">
                                 Gestion des spectacles
                             </a>
                         </li>
+                        {#
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 Gestion des lieux
                             </a>
                         </li>
+                        #}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('app_security_logout') }} ">
                                 Déconnexion
@@ -65,6 +69,7 @@
             </div>
         </nav>
     {% endif %}
+
 
     <!-- Header -->
     <header id="header">
@@ -84,14 +89,43 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container flashbag">
+        {# affichage des messages flash #}
+        {% for type, messages in app.session.flashBag.all %}
+            {% for message in messages %}
+                {#pour la classe alert-danger de bootstrap#}
+                {% if type == 'error' %}
+                    {% set type = 'danger' %}
+                {% endif %}
 
+                <div class="alert alert-{{ type }} alert-dismissible fade show" role="alert">
+                    {{ message|raw }} {#|raw pour autoriser le html dans le message#}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endfor %}
     </div>
-
-
         {% block body %}{% endblock %}
 
-
+    {# modal confirmation suppression #}
+    <div class="modal" tabindex="-1" role="dialog" id="modal-confirm-delete">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmation suppression&nbsp;?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary btn-confirm-delete">Oui</button>
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Non</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer >
 
@@ -131,6 +165,7 @@
             <script src="{{ asset('js/browser.min.js') }}"></script>
             <script src="{{ asset('js/breakpoints.min.js') }}"></script>
             <script src="{{ asset('js/util.js') }}"></script>
+
             <script src="{{ asset('js/function.js') }}"></script>
 
 

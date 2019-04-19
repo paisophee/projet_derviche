@@ -3,12 +3,13 @@
 namespace App\Form;
 
 use App\Entity\Categorie;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ColorType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
 
 class CategorieType extends AbstractType
 {
@@ -17,31 +18,26 @@ class CategorieType extends AbstractType
         $builder
             ->add(
                 'type',
-                EntityType::class,
+                TextType::class,
                 [
-                    'class' => CategorieType::class,
-                    'label' => 'Catégorie',
-                    'placeholder' => 'Choisissez une catégorie',
-                    'choice_label' => 'name',
-                    'required' => false
+                    'label' => "Type de catégorie"
+
                 ]
             )
             ->add(
                 'image',
                 FileType::class,
                 [
-                    'label' => 'image',
+                    'label' => 'Image',
+                    'required' => false
                 ]
-
-            )
-            ->add('spectacles')
-        ;
+            );
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Categorie::class,
-        ]);
+                                   'data_class' => Categorie::class,
+                               ]);
     }
 }

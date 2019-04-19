@@ -7,41 +7,79 @@ use App\Entity\Equipe;
 use App\Form\EquipeType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
+/**
+ * Class SecurityController
+ * @package App\Controller
+ *
+ * @Route("/")
+ */
 class SecurityController extends AbstractController
 {
+
+
     /**
-     * @Route("/inscription")
+     * @Route("admin/equipe")
+     */
+    public function index()
+    {
+
+        $repository = $this->getDoctrine()->getRepository(Equipe::class);
+        $employes = $repository->findBy([], ['nom' => 'ASC']);
+
+        return $this->render(
+            'admin/equipe/index.html.twig',
+            [
+                'employes' => $employes
+            ]
+        );
+
+    }
+
+
+    /**
+     * @Route("/inscription/{id}", defaults={"id": null}, requirements={"id": "\d+"})
      */
     public function register(
         Request $request,
+        $id,
         UserPasswordEncoderInterface $passwordEncoder
-    ) {
-        $equipe = new Equipe();
-        $form = $this->createForm(EquipeType::class, $equipe);
 
+    ) {
+        $em = $this->getDoctrine()->getManager();
+        if (is_null($id)) {
+            $employe = new Equipe();
+        } else { // modification
+            $employe = $em->find(Equipe::class,$id);
+            if (is_null($employe)) {
+                throw new NotFoundHttpException();
+            }
+        }
+
+        $form = $this->createForm(EquipeType::class, $employe);
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
-                $password = $passwordEncoder->encodePassword(
-                    $equipe,
-                    $equipe->getPlainPassword()
+                $mdp = $passwordEncoder->encodePassword(
+                    $employe,
+                    $employe->getPlainPassword()
                 );
 
-                $equipe->setMdp($password);
+                $employe->setMdp($mdp);
 
                 $em = $this->getDoctrine()->getManager();
 
-                $em->persist($equipe);
+                $em->persist($employe);
                 $em->flush();
 
-                $this->addFlash('success', 'Votre compte est créé');
+                $this->addFlash('success', 'Le compte a bien été créé');
 
-                return $this->redirectToRoute('app_index_index');
+                return $this->redirectToRoute('app_security_index');
             } else {
                 $this->addFlash('error', 'Le formulaire contient des erreurs');
             }
@@ -82,4 +120,27 @@ class SecurityController extends AbstractController
     {
 
     }
+
+    /**
+     * @Route("/suppression/{id}")
+     */
+
+
+    public function delete(Equipe $employe)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $em->remove($employe);
+        $em->flush();
+
+        $this->addFlash('success', 'L\'employé(e) a bien été supprimé(e)');
+
+
+        return $this->redirectToRoute('app_security_index');
+    }
+
+
+
+
+
 }

@@ -1,0 +1,123 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container hauteurMin">
+
+
+        <h1 class="mt-5">Edition Spectacle</h1>
+        <a class="btn btn-outline-info my-2" href="{{ path('app_admin_spectacles_index') }}">
+            Retour
+        </a>
+
+        {# ouvre la balise form #}
+        {{ form_start(form) }}
+
+        <div class="row my-4">
+            <div class="col-md-9">
+                {{ form_row(form.titre) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_row(form.duree) }}
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-md-12">
+                {{ form_row(form.nom_cie) }}
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-md-4">
+                {{ form_row(form.spectateur) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.categorie) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.sousCategorie) }}
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12">
+            {{ form_row(form.resume) }}
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-6">
+                {{ form_row(form.site_cie) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_row(form.url_video) }}
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12">
+        {{ form_row(form.critique) }}
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-6">
+                {{ form_row(form.dossier) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_row(form.dossier_peda) }}
+            </div>
+        </div>
+
+
+
+        <div class="row my-4">
+            <div class="col-md-4">
+                {{ form_row(form.image1) }}
+
+            </div>
+
+            <div class="col-md-4">
+                {{ form_row(form.image2) }}
+            </div>
+
+            <div class="col-md-4">
+                {{ form_row(form.image3) }}
+            </div>
+
+        </div>
+        <div class="row my-4">
+            <div class="col-md-4">
+                {% if original_image1 is not null %}
+                    <p>Actuellement en photo n°1 :
+                        <img src="{{ asset('images/spectacles/'~ original_image1) }}" height="200px">
+                    </p>
+                {% endif %}
+            </div>
+
+            <div class="col-md-4">
+                {% if original_image2 is not null %}
+                    <p>Actuellement en photo n°2 :
+                        <img src="{{ asset('images/spectacles/'~ original_image2) }}" height="200px">
+                    </p>
+                {% endif %}
+            </div>
+
+            <div class="col-md-4">
+                {% if original_image3 is not null %}
+                    <p>Actuellement en photo n°3 :
+                        <img src="{{ asset('images/spectacles/'~ original_image3) }}" height="200px">
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+
+
+
+
+
+        <div class="text-right">
+            <button type="submit" class="btn btn-info">Enregistrer</button>
+        </div>
+
+        {# ferme la balise form #}
+        {{ form_end(form) }}
+
+    </div>
+{% endblock %}
+

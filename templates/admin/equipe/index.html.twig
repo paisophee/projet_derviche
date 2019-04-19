@@ -2,6 +2,47 @@
 
 {% block body %}
 
+    <div class="container hauteurMin">
+        <h1 class="mt-5">Gestion équipe</h1>
+        <p>
+            <a href="{{ path('app_security_register') }}"
+               class="btn btn-outline-info my-2">
+                Ajouter un(e) employé(e)
+            </a>
+        </p>
+
+        <table class="table table-bordered">
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Statut</th>
+                <th width="120px">Actions</th>
+            </tr>
+            {% for employe in employes %}
+                <tr>
+                    <td>{{ employe.id }}</td>
+                    <td>{{ employe.nom  }}</td>
+                    <td>{{ employe.prenom }}</td>
+                    <td>{{ employe.email }}</td>
+                    <td>{{ employe.statut }}</td>
+                    <td>
+                        <a href="{{ path('app_security_register', {'id': employe.id}) }}"
+                           class="btn btn-outline-info">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="{{ path('app_security_delete', {'id': employe.id}) }}"
+                           class="btn btn-outline-danger btn-delete">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
 
 
+
+    </div>
 {% endblock %}
+

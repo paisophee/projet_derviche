@@ -57,7 +57,7 @@ class Equipe implements UserInterface
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $statut = 'ROLE_USER';
+    private $statut = 'ROLE_ADMIN';
 
     /**
      * Mot de passe en clair pour interagir avec le formulaire d'inscription
@@ -67,10 +67,7 @@ class Equipe implements UserInterface
      */
     private $plainPassword;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Spectacle", mappedBy="equipe")
-     */
-    private $spectacle;
+
 
     public function __construct()
     {
@@ -230,36 +227,10 @@ class Equipe implements UserInterface
         // TODO: Implement eraseCredentials() method.
     }
 
-    /**
-     * @return Collection|spectacle[]
-     */
-    public function getSpectacle(): Collection
+
+    public function __toString()
     {
-        return $this->spectacle;
+        return $this->prenom . ' ' . $this->nom;
     }
-
-    public function addSpectacle(spectacle $spectacle): self
-    {
-        if (!$this->spectacle->contains($spectacle)) {
-            $this->spectacle[] = $spectacle;
-            $spectacle->setEquipe($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSpectacle(spectacle $spectacle): self
-    {
-        if ($this->spectacle->contains($spectacle)) {
-            $this->spectacle->removeElement($spectacle);
-            // set the owning side to null (unless already changed)
-            if ($spectacle->getEquipe() === $this) {
-                $spectacle->setEquipe(null);
-            }
-        }
-
-        return $this;
-    }
-
 
 }

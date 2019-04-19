@@ -20,14 +20,13 @@ class Spectateur
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=50)
-     *
+     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="Le type de spectateur est obligatoire")
      */
     private $type;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Spectacle", mappedBy="id_spectacle")
+     * @ORM\OneToMany(targetEntity="App\Entity\Spectacle", mappedBy="spectateur", orphanRemoval=true)
      */
     private $spectacles;
 
@@ -53,11 +52,6 @@ class Spectateur
         return $this;
     }
 
-    public function __toString()
-    {
-        return $this->type;
-    }
-
     /**
      * @return Collection|Spectacle[]
      */
@@ -70,7 +64,7 @@ class Spectateur
     {
         if (!$this->spectacles->contains($spectacle)) {
             $this->spectacles[] = $spectacle;
-            $spectacle->setIdSpectacle($this);
+            $spectacle->setSpectateur($this);
         }
 
         return $this;
@@ -81,8 +75,8 @@ class Spectateur
         if ($this->spectacles->contains($spectacle)) {
             $this->spectacles->removeElement($spectacle);
             // set the owning side to null (unless already changed)
-            if ($spectacle->getIdSpectacle() === $this) {
-                $spectacle->setIdSpectacle(null);
+            if ($spectacle->getSpectateur() === $this) {
+                $spectacle->setSpectateur(null);
             }
         }
 
