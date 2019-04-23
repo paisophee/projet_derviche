@@ -23,7 +23,7 @@ class SecurityController extends AbstractController
 
 
     /**
-     * @Route("admin/equipe")
+     * @Route("admin/equipe/")
      */
     public function index()
     {
