@@ -61,9 +61,9 @@ class EquipeType extends AbstractType
                 'statut',
                 ChoiceType::class,[
                     'choices'=>[
-                        'Super Admin' => 'ROLE_ADMIN',
-                        'Admin' => 'ROLE_USER'
-
+                        'Super Admin' => 'ROLE_SUPER_ADMIN',
+                        'Admin' => 'ROLE_ADMIN',
+                        'User' => 'ROLE_USER'
                     ]
                 ])
         ;

@@ -21,24 +21,28 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
 
-
+/* --------------------------------------------------------------------
+                   PAGE EQUIPE SEULEMENT POUR SUPER ADMIN
+-----------------------------------------------------------------------*/
     /**
-     * @Route("admin/equipe")
+     * @Route("super_admin/equipe")
      */
     public function index()
     {
+            $repository = $this->getDoctrine()->getRepository(Equipe::class);
+            $employes = $repository->findBy([], ['nom' => 'ASC']);
 
-        $repository = $this->getDoctrine()->getRepository(Equipe::class);
-        $employes = $repository->findBy([], ['nom' => 'ASC']);
-
-        return $this->render(
-            'admin/equipe/index.html.twig',
-            [
-                'employes' => $employes
-            ]
-        );
-
+            return $this->render(
+                'super_admin/equipe/index.html.twig',
+                [
+                    'employes' => $employes
+                ]
+            );
     }
+
+/* --------------------------------------------------------------------
+                      FIN PAGE INDEX EQUIPE
+-----------------------------------------------------------------------*/
 
 
     /**
