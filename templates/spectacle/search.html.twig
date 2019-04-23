@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Derviche Diffusion | Nos Spectacles{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="{{ asset('css/spectacle.css') }}">
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="container hauteurMin">
+        <h2 class="mt-5">Nos Spectacles</h2>
+
+
+        {##### Search form  ###}
+        <a href="{{ path('app_spectacle_index') }}" class="btn btn-outline-info btn-flitre my-4">Retour</a>
+
+
+
+        <div class="card bg-light mb-3 filtre">
+            <div class="card-body">
+                {{ form_start(search_form) }}
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form_row(search_form.titre) }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_row(search_form.nom_cie) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form_row(search_form.categorie) }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_row(search_form.sous_categorie) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form_row(search_form.spectateur) }}
+                    </div>
+                    <div class="col-md-3">
+                        {{ form_row(search_form.pays) }}
+                    </div>
+                    <div class="col-md-3">
+                        {{ form_row(search_form.departement) }}
+
+                    </div>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-outline-info mt-4" type="submit">Rechercher</button>
+                </div>
+
+                {{ form_end(search_form)}}
+
+            </div>
+        </div>
+        <div id="blocSearch">
+
+            {% if spectaclesByRecherche is not empty %}
+
+                <div class="d-md-inline-flex p-5 flex-wrap justify-content-between">
+                    {% for spectacle in spectaclesByRecherche %}
+
+                        <div class="card m-4" style="width: 18rem;">
+                            <div class="">
+                                <img class="card-img-top" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="Card image cap">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title card-titre-spect">{{ spectacle.titre }}</h5>
+                                <p class="card-text card-sstitre-spect">{{ spectacle.nomCie }}</p>
+                                <a href="{{ path('app_spectacle_singlespectacle', {'id' : spectacle.id }) }}" class="btn btn-outline-info">En savoir plus</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            {% else %}
+                <p>Il n'y a actuellement pas de spectacle qui correspond à votre recherche.</p>
+            {% endif %}
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/spectacle.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Derviche Diffusion | Nos Spectacles{% endblock %}
+
+{% block body %}
+    <div class="container hauteurMin">
+        <a class="btn btn-outline-info mt-4" href="{{ path('app_index_index') }}#spectacle">Retour aux catégories</a>
+        <a class="btn btn-outline-info mt-4" href="{{ path('app_spectacle_index') }}">Tous nos spectacles</a>
+
+        <h3 class="mt-5">Cirque / Mime / Performance</h3>
+        {% if autres is not empty %}
+
+            <div class="d-md-inline-flex p-5 flex-wrap">
+                {% for spectacle in autres %}
+
+                    <div class="card m-1" style="width: 18rem;">
+                        <div class="">
+                            <img class="card-img-top" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="Card image cap">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title card-titre-spect">{{ spectacle.titre }}</h5>
+                            <p class="card-text card-sstitre-spect">{{ spectacle.nomCie }}</p>
+                            <a href="{{ path('app_spectacle_singlespectacle', {'id' : spectacle.id }) }}" class="btn btn-outline-info">En savoir plus</a>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        {% else %}
+            <p>Il n'y a actuellement pas de spectacle dans cette catégorie.</p>
+        {% endif %}
+
+    </div>
+
+
+{% endblock %}

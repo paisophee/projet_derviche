@@ -79,30 +79,100 @@ class Spectacle
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\SousCategorie", inversedBy="spectacles")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $sousCategorie;
 
     /**
      * @Assert\Image(mimeTypesMessage="Le fichier doit être une image",
-     * maxSize="500k", maxSizeMessage="Le fichier ne doit pas faire plus de 500ko")
+     * maxSize="1000k", maxSizeMessage="Le fichier ne doit pas faire plus de 1000ko")
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image1;
 
     /**
      * @Assert\Image(mimeTypesMessage="Le fichier doit être une image",
-     * maxSize="500k", maxSizeMessage="Le fichier ne doit pas faire plus de 500ko")
+     * maxSize="1000k", maxSizeMessage="Le fichier ne doit pas faire plus de 1000ko")
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image2;
 
     /**
      * @Assert\Image(mimeTypesMessage="Le fichier doit être une image",
-     * maxSize="500k", maxSizeMessage="Le fichier ne doit pas faire plus de 500ko")
+     * maxSize="1000k", maxSizeMessage="Le fichier ne doit pas faire plus de 1000ko")
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image3;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $en_savoir_plus;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $texte_complementaire;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $en_tournee;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $departement;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $age_spectateurs;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $mail_contact;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $representations;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $note_mise_en_scene;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $atelier;
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $dimensions_plateau;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $en_pratique;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $pays;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $coproduction;
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $sousCategoriePersonalise;
 
     public function __construct()
     {
@@ -332,6 +402,174 @@ class Spectacle
     public function setImage3($image3)
     {
         $this->image3 = $image3;
+
+        return $this;
+    }
+
+    public function getEnSavoirPlus(): ?string
+    {
+        return $this->en_savoir_plus;
+    }
+
+    public function setEnSavoirPlus(?string $en_savoir_plus): self
+    {
+        $this->en_savoir_plus = $en_savoir_plus;
+
+        return $this;
+    }
+
+    public function getTexteComplementaire(): ?string
+    {
+        return $this->texte_complementaire;
+    }
+
+    public function setTexteComplementaire(?string $texte_complementaire): self
+    {
+        $this->texte_complementaire = $texte_complementaire;
+
+        return $this;
+    }
+
+    public function getEnTournee(): ?string
+    {
+        return $this->en_tournee;
+    }
+
+    public function setEnTournee(?string $en_tournee): self
+    {
+        $this->en_tournee = $en_tournee;
+
+        return $this;
+    }
+
+    public function getDepartement(): ?int
+    {
+        return $this->departement;
+    }
+
+    public function setDepartement(?int $departement): self
+    {
+        $this->departement = $departement;
+
+        return $this;
+    }
+
+    public function getAgeSpectateurs(): ?int
+    {
+        return $this->age_spectateurs;
+    }
+
+    public function setAgeSpectateurs(?int $age_spectateurs): self
+    {
+        $this->age_spectateurs = $age_spectateurs;
+
+        return $this;
+    }
+
+    public function getMailContact(): ?string
+    {
+        return $this->mail_contact;
+    }
+
+    public function setMailContact(?string $mail_contact): self
+    {
+        $this->mail_contact = $mail_contact;
+
+        return $this;
+    }
+
+    public function getRepresentations(): ?string
+    {
+        return $this->representations;
+    }
+
+    public function setRepresentations(?string $representations): self
+    {
+        $this->representations = $representations;
+
+        return $this;
+    }
+
+    public function getNoteMiseEnScene(): ?string
+    {
+        return $this->note_mise_en_scene;
+    }
+
+    public function setNoteMiseEnScene(?string $note_mise_en_scene): self
+    {
+        $this->note_mise_en_scene = $note_mise_en_scene;
+
+        return $this;
+    }
+
+    public function getAtelier(): ?string
+    {
+        return $this->atelier;
+    }
+
+    public function setAtelier(?string $atelier): self
+    {
+        $this->atelier = $atelier;
+
+        return $this;
+    }
+
+    public function getDimensionsPlateau(): ?string
+    {
+        return $this->dimensions_plateau;
+    }
+
+    public function setDimensionsPlateau(?string $dimensions_plateau): self
+    {
+        $this->dimensions_plateau = $dimensions_plateau;
+
+        return $this;
+    }
+
+    public function getEnPratique(): ?string
+    {
+        return $this->en_pratique;
+    }
+
+    public function setEnPratique(?string $en_pratique): self
+    {
+        $this->en_pratique = $en_pratique;
+
+        return $this;
+    }
+
+    public function getPays(): ?string
+    {
+        return $this->pays;
+    }
+
+    public function setPays(string $pays): self
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+    public function getCoproduction(): ?string
+    {
+        return $this->coproduction;
+    }
+
+    public function setCoproduction(?string $coproduction): self
+    {
+        $this->coproduction = $coproduction;
+
+        return $this;
+    }
+
+    public function getSousCategoriePersonalise(): ?string
+    {
+        return $this->sousCategoriePersonalise;
+    }
+
+    public function setSousCategoriePersonalise(?string $sousCategoriePersonalise): self
+    {
+        $this->sousCategoriePersonalise = $sousCategoriePersonalise;
 
         return $this;
     }
