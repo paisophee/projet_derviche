@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SousCategorieRepository")
@@ -20,19 +21,37 @@ class SousCategorie
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le choix de la sous catégorie est obligatoire")
      */
     private $type;
 
     /**
+     * Validation de l'image
+     * @Assert\Image(mimeTypesMessage="Le fichier doit être une image",
+     * maxSize="200k", maxSizeMessage="Le fichier ne doit pas faire plus de 200ko")
+     *
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $image;
+
+
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Spectacle", mappedBy="sousCategorie")
+     * @ORM\JoinTable(name="spectacle_categorie")
      */
     private $spectacles;
 
+
+
+            /*************** CONSTRUCT ********************/
     public function __construct()
     {
         $this->spectacles = new ArrayCollection();
     }
 
+
+        /****************** GETTER/SETTER *********************/
     public function getId(): ?int
     {
         return $this->id;
@@ -47,6 +66,24 @@ class SousCategorie
     {
         $this->type = $type;
 
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     * @return SousCategorie
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
         return $this;
     }
 
