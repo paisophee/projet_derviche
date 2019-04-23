@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="containerError">
+        <img class="error404" src="{{ asset('images/error404.png') }}" alt="error404">
+        <div>
+            <p class="textError">
+                Vous vous êtes égaré, <br>
+                il n'y a pas de spectacle ici !
+            </p>
+            <button class="buttonError">
+                <a class="lienError" href="{{ path('app_index_index') }}">Retrouvez nous</a>
+            </button>
+        </div>
+    </div>
+{% endblock %}

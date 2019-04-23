@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container hauteurMin">
+        <h1 class="mt-5">Edition sous catégorie</h1>
+        <a class="btn btn-outline-info my-2" href="{{ path('app_admin_souscategorie_index') }}">
+            Retour
+        </a>
+
+
+        {{ form_start(form) }}
+
+        {{ form_row(form.type) }}
+        {{ form_row(form.image) }}
+        <div class="row my-4">
+            <div class="col-md-4">
+                {% if original_image is not null %}
+                    <p>Actuellement :
+                        <img src="{{ asset('images/categorie/'~ original_image) }}" height="200px">
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="text-right">
+            <button type="submit" class="btn btn-outline-info my-3">Enregistrer</button>
+        </div>
+
+        {{ form_end(form) }}
+
+    </div>
+
+{% endblock %}
+

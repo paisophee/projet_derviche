@@ -13,6 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Categorie
 {
     /**
+     *
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
@@ -29,7 +30,7 @@ class Categorie
      * Validation de l'image
      * @Assert\Image(mimeTypesMessage="Le fichier doit être une image",
      * maxSize="200k", maxSizeMessage="Le fichier ne doit pas faire plus de 200ko")
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $image;
 
