@@ -21,3 +21,4 @@ class AccueilController extends AbstractController
         return $this->render('admin/accueil/index.html.twig');
     }
 }
+

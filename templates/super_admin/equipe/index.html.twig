@@ -26,7 +26,16 @@
                     <td>{{ employe.nom  }}</td>
                     <td>{{ employe.prenom }}</td>
                     <td>{{ employe.email }}</td>
-                    <td>{{ employe.statut }}</td>
+
+                    {% if employe.statut == 'ROLE_SUPER_ADMIN' %}
+                        <td>Super Admin</td>
+                    {% elseif employe.statut == 'ROLE_ADMIN' %}
+                        <td>Admin</td>
+                    {% elseif employe.statut == 'ROLE_USER' %}
+                        <td>User</td>
+                    {% endif %}
+
+
                     <td>
                         <a href="{{ path('app_security_register', {'id': employe.id}) }}"
                            class="btn btn-outline-info">

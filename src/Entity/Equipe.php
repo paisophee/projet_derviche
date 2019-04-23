@@ -57,7 +57,7 @@ class Equipe implements UserInterface
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private $statut = 'ROLE_ADMIN';
+    private $statut = 'ROLE_SUPER_ADMIN';
 
     /**
      * Mot de passe en clair pour interagir avec le formulaire d'inscription
