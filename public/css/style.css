@@ -270,3 +270,40 @@ button.close:hover{
     box-shadow: none !important;
 }
 
+
+/* Erreur 404 */
+#containerError{
+    width:100%;
+    display:flex;
+}
+.error{
+    width:30%;
+    height:30%;
+    margin-top:70px;
+    margin-left:100px;
+}
+.textError{
+    width:100%;
+    margin-top:50%;
+    margin-left:25%;
+    font-family: 'Roboto Slab', serif;
+    font-size:20px;
+}
+.buttonError{
+    font-family: 'Roboto Slab', serif;
+    background:transparent;
+    text-decoration:none;
+    margin-left:25%;
+    border-radius: 20px;
+    border:1px solid black;
+}
+.buttonError:hover{
+    background: transparent;
+}
+.lienError{
+    color:black;
+}
+.lienError:hover{
+    text-decoration: none;
+    color:red;
+}
