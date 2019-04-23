@@ -13,35 +13,47 @@
         {{ form_start(form) }}
 
         <div class="row my-4">
-            <div class="col-md-9">
+            <div class="col-md-6">
                 {{ form_row(form.titre) }}
             </div>
-            <div class="col-md-3">
-                {{ form_row(form.duree) }}
-            </div>
-        </div>
-        <div class="row my-2">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 {{ form_row(form.nom_cie) }}
             </div>
         </div>
 
+
         <div class="row my-4">
-            <div class="col-md-4">
-                {{ form_row(form.spectateur) }}
-            </div>
+
             <div class="col-md-4">
                 {{ form_row(form.categorie) }}
             </div>
             <div class="col-md-4">
                 {{ form_row(form.sousCategorie) }}
+                {{ form_row(form.spectateur) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.sousCategoriePersonalise) }}
+                {{ form_row(form.pays) }}
+
             </div>
         </div>
+
         <div class="row my-4">
-            <div class="col-md-12">
-            {{ form_row(form.resume) }}
+            <div class="col-md-3">
+                {{ form_row(form.departement) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_row(form.duree) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_row(form.ageSpectateurs) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_row(form.mailContact) }}
             </div>
         </div>
+
+
         <div class="row my-4">
             <div class="col-md-6">
                 {{ form_row(form.site_cie) }}
@@ -50,11 +62,7 @@
                 {{ form_row(form.url_video) }}
             </div>
         </div>
-        <div class="row my-4">
-            <div class="col-md-12">
-        {{ form_row(form.critique) }}
-            </div>
-        </div>
+
         <div class="row my-4">
             <div class="col-md-6">
                 {{ form_row(form.dossier) }}
@@ -63,6 +71,63 @@
                 {{ form_row(form.dossier_peda) }}
             </div>
         </div>
+
+
+        <div class="row my-4">
+            <div class="col-md-12">
+            {{ form_row(form.resume) }}
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-md-12">
+                {{ form_row(form.enSavoirPlus) }}
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-md-12">
+                {{ form_row(form.texteComplementaire) }}
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-md-12">
+                {{ form_row(form.noteMiseEnScene) }}
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-md-12">
+        {{ form_row(form.critique) }}
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-md-6">
+                {{ form_row(form.representations) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_row(form.coproduction) }}
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-md-12">
+                {{ form_row(form.atelier) }}
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-md-6">
+                {{ form_row(form.enPratique) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_row(form.dimensionsPlateau) }}
+                {{ form_row(form.enTournee) }}
+            </div>
+        </div>
+
 
 
 
@@ -114,6 +179,7 @@
         <div class="text-right">
             <button type="submit" class="btn btn-info">Enregistrer</button>
         </div>
+
 
         {# ferme la balise form #}
         {{ form_end(form) }}

@@ -6,6 +6,7 @@ use App\Entity\Categorie;
 use App\Entity\SousCategorie;
 use App\Entity\Spectacle;
 use App\Entity\Spectateur;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -33,10 +34,11 @@ class SpectacleType extends AbstractType
                     'label' => 'Nom de la compagnie'
                   ])
             ->add('resume',
-                TextareaType::class,
+                CKEditorType::class,
                 [
                     'label' => 'Resumé'
                   ])
+
             ->add('duree',
                 IntegerType::class,
                 [
@@ -55,7 +57,7 @@ class SpectacleType extends AbstractType
                     'required' => false
                   ])
             ->add('critique',
-                TextareaType::class,
+                CKEditorType::class,
                 [
                     'label' => 'Critique du spectacle',
                     'required' => false
@@ -99,7 +101,9 @@ class SpectacleType extends AbstractType
                       'label' => 'Sous-catégorie',
                       'class' => SousCategorie::class,
                       'choice_label' => 'type',
-                      'placeholder' => 'Choisissez une sous-catégorie'
+                      'placeholder' => 'Choisissez une sous-catégorie',
+                        'required' => false
+
                   ])
             ->add(
                 'image1',
@@ -123,6 +127,120 @@ class SpectacleType extends AbstractType
                     'label' => 'Photo 3',
                     'required' => false,
                 ])
+            ->add(
+                'enSavoirPlus',
+                CKEditorType::class,
+                [
+                    'label' => 'En savoir plus',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'texteComplementaire',
+                CKEditorType::class,
+                [
+                    'label' => 'Texte complémentaire',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'enTournee',
+                TextType::class,
+                [
+                    'label' => 'Nombre et role des personnes en tournée',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'departement',
+                IntegerType::class,
+                [
+                    'label' => 'N° département de la cie',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'ageSpectateurs',
+                IntegerType::class,
+                [
+                    'label' => 'Age à partir de',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'mailContact',
+                TextType::class,
+                [
+                    'label' => 'Mail du contact Derviche',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'representations',
+                CKEditorType::class,
+                [
+                    'label' => 'Date et lieu de representations',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'noteMiseEnScene',
+                CKEditorType::class,
+                [
+                    'label' => 'Note du metteur en scène ou du chorégraphe',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'atelier',
+                CKEditorType::class,
+                [
+                    'label' => 'Atelier autour du spectacle',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'dimensionsPlateau',
+                TextType::class,
+                [
+                    'label' => 'Dimension du plateau',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'enPratique',
+                TextareaType::class,
+                [
+                    'label' => 'En pratique',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'pays',
+                TextType::class,
+                [
+                    'label' => 'Pays de la cie',
+                    'required' => false,
+                ]
+            )
+            ->add(
+                'coproduction',
+                CKEditorType::class,
+                [
+                    'label' => 'Coproduction',
+                    'required' => false,
+                ]
+            )
+
+            ->add(
+                'sousCategoriePersonalise',
+                TextType::class,
+                [
+                    'label' => 'Sous-catégorie personnalisée',
+                    'required' => false,
+                ]
+            )
+
         ;
     }
 
