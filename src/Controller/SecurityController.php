@@ -7,10 +7,8 @@ use App\Entity\Equipe;
 use App\Form\EquipeType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\Security\Core\User\User;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 /**
@@ -104,7 +102,7 @@ class SecurityController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils)
     {
         if (!is_null($this->getUser())){
-            return $this->render('bundles/TwigBundle/Exception/error404.html.twig');
+            return $this->render('bundles/TwigBundle/Exception/error403.html.twig');
         }
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
