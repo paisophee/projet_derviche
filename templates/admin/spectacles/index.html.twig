@@ -76,7 +76,7 @@
                     </td>
 
                     <td>
-                    {% if spectacle.sousCategorie is not null %}
+                    {% if spectacle.sousCategorie is not empty %}
                         {{ spectacle.sousCategorie.type }}
                     {% endif %}
                     </td>
@@ -84,13 +84,20 @@
                     <td>{{ spectacle.spectateur.type }}</td>
 
                     <td>
-                        {% if spectacle.image1 is not null %}
+                        
                             <div>
-                                <img src="{{ asset('images/spectacles/' ~ spectacle.image1) }}" width="80px">
-                                <img src="{{ asset('images/spectacles/' ~ spectacle.image2) }}" width="80px">
-                                <img src="{{ asset('images/spectacles/' ~ spectacle.image3) }}" width="80px">
+                                {% if spectacle.image1 is not empty %}
+                                    <img src="{{ asset('images/spectacles/' ~ spectacle.image1) }}" width="80px">
+                                {% endif %}
+                                {% if spectacle.image2 is not empty %}
+                                    <img src="{{ asset('images/spectacles/' ~ spectacle.image2) }}" width="80px"> 
+                                {% endif %}
+                                {% if spectacle.image3 is not empty %}
+                                    <img src="{{ asset('images/spectacles/' ~ spectacle.image3) }}" width="80px">
+                                {% endif %}
+
                             </div>
-                        {% endif %}
+                        
                     </td>
                     <td class="text-center">
                         <a href="{{ path('app_admin_spectacles_edit', {'id': spectacle.id}) }}"

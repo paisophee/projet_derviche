@@ -62,7 +62,7 @@
                 {% endfor %}
 
                 {% if spectacle.sousCategorie is not empty %}
-                     {{ spectacle.sousCategorie }},
+                     {{ spectacle.sousCategorie.type }},
                 {% endif %}
                 {% if spectacle.sousCategoriePersonalise is not empty %}
                  {{ spectacle.sousCategoriePersonalise }}</p>
