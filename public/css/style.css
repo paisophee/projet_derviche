@@ -398,3 +398,11 @@ hr{
     display: none;
     border-radius: 15px;
 }
+
+/* Politiques Conf et Mentions légales */
+
+.pagesReglementation {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-bottom: 50px;
+}
