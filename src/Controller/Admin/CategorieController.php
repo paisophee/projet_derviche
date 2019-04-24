@@ -55,6 +55,7 @@ class CategorieController extends AbstractController
             //404 si l'id reçu dans l'URL n'est pas en bdd
             if(is_null($categorie)){
                 throw new NotFoundHttpException();
+
             }
 
             // si la catégorie contient une image
