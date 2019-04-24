@@ -418,3 +418,12 @@ hr{
     width: 1em;
     height: 1em;
 }
+
+
+/* Politiques Conf et Mentions légales */
+
+.pagesReglementation {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-bottom: 50px;
+}
