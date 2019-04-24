@@ -1,5 +1,8 @@
 /*general*/
 
+.nav-item{
+    font-size: 0.95em;
+}
 
 *:focus {
 
@@ -264,12 +267,87 @@ button.close:hover{
 }
 
 
-/* contour degueu*/
+/* contour bleu bootstrap*/
 *:focus{
     /*outline: none !important;*/
     box-shadow: none !important;
 }
 
+
+/*texte dans formulaire*/
+form,input,select,textarea{
+    font-size: 0.9em;
+}
+
+/*message d'alerte de formulaire*/
+form ul li{
+    color: red;
+}
+
+
+table tr td{
+    font-size: 0.8em;
+}
+
+
+
+
+/* page single*/
+
+.link{
+    color: teal !important;
+    transition: 0.3s;
+
+}
+
+a.link:hover{
+    text-decoration: none;
+    border-radius: 10px;
+    border: 0.8px solid teal;
+    padding: 5px;
+    transition: 0.3s;
+    color: white !important;
+    background-color: teal;
+    font-weight: lighter;
+    box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.75);
+
+}
+
+
+hr{
+    border: 1px dotted teal;
+}
+
+.teal{
+    color: teal !important;
+
+}
+
+.textaside{
+    font-size: 0.7em;
+}
+
+
+.text-single>p{
+    font-size: 0.8em;
+}
+
+
+/* spectacle by categorie*/
+
+.card-titre-spect{
+    font-size: 1em;
+    line-height: 1.1em;
+}
+
+.card-sstitre-spect{
+    font-size: 0.8em;
+    line-height: 1.1em;
+
+}
+.img-card{
+    height: 130px;
+}
 
 /* Erreur 404 */
 #containerError{

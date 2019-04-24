@@ -26,26 +26,33 @@
                     <td>{{ spectacle.nomCie }}</td>
                     <td>{% for categorie in spectacle.categorie %}
                             {{ categorie }}<br>
-                        {% endfor %}</td>
-                    <td>{{ spectacle.sousCategorie.type }}</td>
+                        {% endfor %}
+                    </td>
+
+                    <td>
+                    {% if spectacle.sousCategorie is not null %}
+                        {{ spectacle.sousCategorie.type }}
+                    {% endif %}
+                    </td>
+
                     <td>{{ spectacle.spectateur.type }}</td>
 
                     <td>
                         {% if spectacle.image1 is not null %}
                             <div>
-                                <img src="{{ asset('images/spectacles/' ~ spectacle.image1) }}" width="100px">
-                                <img src="{{ asset('images/spectacles/' ~ spectacle.image2) }}" width="100px">
-                                <img src="{{ asset('images/spectacles/' ~ spectacle.image3) }}" width="100px">
+                                <img src="{{ asset('images/spectacles/' ~ spectacle.image1) }}" width="80px">
+                                <img src="{{ asset('images/spectacles/' ~ spectacle.image2) }}" width="80px">
+                                <img src="{{ asset('images/spectacles/' ~ spectacle.image3) }}" width="80px">
                             </div>
                         {% endif %}
                     </td>
-                    <td>
+                    <td class="text-center">
                         <a href="{{ path('app_admin_spectacles_edit', {'id': spectacle.id}) }}"
-                           class="btn btn-outline-info">
+                           class="btn btn-outline-info my-2">
                             <i class="fas fa-edit"></i>
                         </a>
                         <a href="{{ path('app_admin_spectacles_delete', {'id': spectacle.id}) }}"
-                           class="btn btn-outline-danger btn-delete">
+                           class="btn btn-outline-danger btn-delete my-2">
                             <i class="fas fa-trash-alt"></i>
                         </a>
                         {#<a href="{{ path('app_admin_spectacle_ajaxcontent',{'id' : spectacle.id }) }}" class="btn btn-outline-secondary btn-article-content"><i class="fas fa-eye"></i></a>#}
