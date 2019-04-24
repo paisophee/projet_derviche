@@ -99,21 +99,18 @@ window.addEventListener('load', function(){
 
 
 
-/*
+
 // filtre
-    var btn = $(".btn-flitre");
-    var bloc = $(".filtre");
-    var allSpectacle = $("#all-spectacle");
-    var blocSearch = $('#blocSearch');
+    var btn = $(".btn-recherche");
+    var bloc = $(".rechercheSpectacle");
+
 
     btn.on("click", function(){
-        bloc.toggle();
-        allSpectacle.toggle();
+        bloc.fadeToggle();
 
-        blocSearch.toggle();
     })
 
-*/
+
 
 
 
