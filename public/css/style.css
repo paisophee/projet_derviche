@@ -107,7 +107,7 @@ article{
 }
 
 article:hover{
-    transform: scale(1.15, 1.15);
+    transform: scale(1.05, 1.05);
     z-index: 999 !important;
 
 }
@@ -379,9 +379,22 @@ hr{
     background: transparent;
 }
 .lienError{
-    color:black;
+    color:black !important;
 }
 .lienError:hover{
-    text-decoration: none;
-    color:red;
+    text-decoration: none !important;
+    color:red !important;
+}
+
+
+/*Recherche spectacle dans admin*/
+.rechercheSpectacle input,
+.rechercheSpectacle select
+{
+    background-color: white;
+}
+.rechercheSpectacle{
+    width: 100%;
+    display: none;
+    border-radius: 15px;
 }

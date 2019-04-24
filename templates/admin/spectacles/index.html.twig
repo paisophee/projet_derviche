@@ -6,11 +6,57 @@
     <div class="container hauteurMin">
 
         <h1 class="mt-5">Gestion des Spectacles</h1>
-        <p>
-            <a class="btn btn-outline-info my-2" href="{{ path('app_admin_spectacles_edit') }}">Ajouter un spectacle</a>
-        </p>
 
-        <table class="table table-bordered">
+        <a class="btn btn-outline-info mt-3" href="{{ path('app_admin_spectacles_edit') }}">Ajouter un spectacle</a>
+        <a href="#" class="btn btn-outline-info btn-recherche mt-3">Rechercher</a>
+        <a href="{{ path('app_admin_spectacles_index') }}" class="btn btn-outline-info mt-3">Tous les spectacles</a>
+
+        <div class="card bg-light mb-3 rechercheSpectacle mt-4">
+            <div class="card-body">
+                {{ form_start(search_form) }}
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form_row(search_form.titre) }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_row(search_form.nom_cie) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form_row(search_form.categorie) }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_row(search_form.sous_categorie) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form_row(search_form.spectateur) }}
+                    </div>
+                    <div class="col-md-3">
+                        {{ form_row(search_form.pays) }}
+                    </div>
+                    <div class="col-md-3">
+                        {{ form_row(search_form.departement) }}
+
+                    </div>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-outline-info mt-4 btn-sm" type="submit">Rechercher</button>
+                </div>
+
+                {{ form_end(search_form)}}
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <table class="table table-bordered mt-5">
             <tr>
                 <th class="text-center">Titre du spectacle</th>
                 <th class="text-center">Nom de la cie</th>
@@ -68,4 +114,8 @@
     </div>
 
 
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/spectacle.js') }}"></script>
 {% endblock %}

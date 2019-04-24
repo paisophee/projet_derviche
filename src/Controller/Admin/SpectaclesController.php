@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Article;
 use App\Entity\Categorie;
 use App\Entity\Spectacle;
+use App\Form\SearchSpectacleType;
 use App\Form\SpectacleType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\File;
@@ -26,13 +27,17 @@ class SpectaclesController extends AbstractController
      */
     public function index(Request $request)
     {
-        $repository = $this->getDoctrine()->getRepository(Spectacle::class);
-        $spectacles = $repository->findAll();
+        $Repository = $this->getDoctrine()->getRepository(Spectacle::class);
+        //$spectacles = $repository->findAll();
+        $searchform = $this->createForm(SearchSpectacleType::class);
+        $searchform->handleRequest($request);
 
+        $spectacles = $Repository->search((array)$searchform->getData());
 
         return $this->render('admin/spectacles/index.html.twig',
         [
-            'spectacles' => $spectacles
+            'spectacles' => $spectacles,
+            'search_form' => $searchform->createView()
         ]
         );
 
@@ -220,6 +225,7 @@ class SpectaclesController extends AbstractController
         $this->addFlash('success', 'Votre spectacle a bien été supprimé');
         return $this->redirectToRoute('app_admin_spectacles_index');
     }
+
 
 
 

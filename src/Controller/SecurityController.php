@@ -102,6 +102,9 @@ class SecurityController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils)
     {
+        if (!is_null($this->getUser())){
+            return $this->render('bundles/TwigBundle/Exception/error404.html.twig');
+        }
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
 
