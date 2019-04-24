@@ -17,136 +17,149 @@
     <h6 class="mt-5 text-secondary">{{ spectacle.nomCie }}</h6>
 
     <h2 class="">{{ spectacle.titre }}</h2>
-    <hr size="4" width="100%">
-
-    <div class="text-center">
-        <img  class="my-5 img-fluid" src="{{ asset('images/spectacles/' ~ spectacle.image1) }}" alt="">
-    </div>
-
-
 
     <div class="row">
-        <div class="col-md-4 textaside mt-5">
-            {% if spectacle.urlVideo is not empty %}
-                <p class="link">
-                    <a class="link" href="{{ spectacle.urlVideo }}" target="_blank"><i class="fas fa-video"></i> Teaser du spectacle</a>
-                </p>
-            {% endif %}
-
-            {% if spectacle.siteCie is not empty %}
-            <p class="link">
-                <a class="link" href="{{ spectacle.siteCie }}" target="_blank"><i class="fas fa-window-restore"></i> Site de la compagnie</a></p>
-            {% endif %}
-
-            <p class="link">
-                <a class="link" href="mailto:{{ spectacle.mailContact }}?subject={{ spectacle.titre }} - demande d'informations en ligne"><i class="fas fa-envelope"></i> Contactez-nous</a>
-            </p>
-                {% if spectacle.dossier is not empty %}
-            <p class="link">
-                <a class="link" href="{{ spectacle.dossier }}" target="_blank"><i class="fas fa-file-pdf"></i> Télécharger le dossier du spectacle</a>
-            </p>
-                {% endif %}
-                {% if spectacle.dossierPeda is not empty %}
-            <p class="link">
-                <a class="link" href="{{ spectacle.dossierPeda }}" target="_blank"><i class="fas fa-file-pdf"></i> Télécharger le dossier du spectacle pédagogique</a>
-            </p>
-                {% endif %}
-
-            <hr width="80%" align=left>
-
-
-            <p><strong>Catégorie :</strong>
-
-                {% for categ in spectacle.categorie %}
-                    {{ categ }},
-                {% endfor %}
-
-                {% if spectacle.sousCategorie is not empty %}
-                     {{ spectacle.sousCategorie.type }},
-                {% endif %}
-                {% if spectacle.sousCategoriePersonalise is not empty %}
-                 {{ spectacle.sousCategoriePersonalise }}</p>
-            {% endif %}
+        <div class="col-md-8">
+        {% for categ in spectacle.categorie %}
+             {{ categ }} /
+        {% endfor %}
+        {% if spectacle.sousCategorie is not empty %}
+            {{ spectacle.sousCategorie.type }} /
+        {% endif %}
+        {% if spectacle.sousCategoriePersonalise is not empty %}
+            {{ spectacle.sousCategoriePersonalise }} /
+        {% endif %}
             <p>Spectacle  <strong>{{ spectacle.spectateur }}</strong>
                 {% if spectacle.ageSpectateurs is not empty %}
-                    à partir de {{ spectacle.ageSpectateurs }} ans
+                    à partir de {{ spectacle.ageSpectateurs }} ans -
                 {% endif %}
-                </p>
+
             {% if spectacle.duree is not empty %}
-                <p><strong>Durée :</strong> {{ spectacle.duree }} minutes</p>
-
+                <strong>Durée :</strong> {{ spectacle.duree }} minutes</p>
             {% endif %}
-            <p>Compagnie basé en {{ spectacle.pays }} (Département : {{ spectacle.departement }})</p>
-            </p>
+
         </div>
+        <div class="col-md-4 text-right ml">
 
-        <div class="col-md-8 text-single">
-            <h3 class="teal my-5">A propos : </h3>
-            <p>{{ spectacle.resume|raw }}</p>
+                <p class="link">
+                    {% if spectacle.urlVideo is not empty %}
+                        <a class="link" href="{{ spectacle.urlVideo }}" target="_blank"><i class="fas fa-video"></i></a>
+                    {% endif %}
+                    {% if spectacle.siteCie is not empty %}
+                        <a class="link" href="{{ spectacle.siteCie }}" target="_blank"><i class="fas fa-window-restore"></i></a>
+                    {% endif %}
+                    {% if spectacle.mailContact is not empty %}
+                        <a class="link" href="mailto:{{ spectacle.mailContact }}?subject={{ spectacle.titre }} - demande d'informations en ligne"><i class="fas fa-envelope"></i></a>
+                    {% endif %}
 
+                </p>
+
+        </div>
+    </div>
+    <hr size="4" width="100%">
+
+
+    <div class="text-center">
+        <img  class="mt-4 img-fluid w-100" src="{{ asset('images/spectacles/' ~ spectacle.image1) }}" alt="">
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-single">
+            <h6 class="mt-5 text-secondary text-uppercase">Le spectacle</h6>
+            <p class="mb-2">{{ spectacle.resume|raw }}</p>
             {% if spectacle.texteComplementaire is not empty %}
-                <p>{{ spectacle.texteComplementaire|raw }}</p>
+                <p class="mb-2">{{ spectacle.texteComplementaire|raw }}</p>
             {% endif %}
-
-            {% if spectacle.noteMiseEnScene is not empty %}
-                <h3 class="teal my-5">Notes : </h3>
-                <p>{{ spectacle.noteMiseEnScene|raw }}</p>
+        </div>
+        <div class="col-md-12 text-single">
+        {% if spectacle.noteMiseEnScene is not empty %}
+                <hr size="4" width="100%">
+                <h6 class="mt-3 text-secondary text-uppercase">Notes</h6>
+                <p class="mb-2">{{ spectacle.noteMiseEnScene|raw }}</p>
             {% endif %}
-
+        </div>
+        <div class="col-md-12 text-single">
             {% if spectacle.atelier is not empty %}
-                <h3 class="teal my-5">Atelier : </h3>
+                <hr size="4" width="100%">
+                <h6 class="mt-3 text-secondary text-uppercase">Atelier</h6>
                 <p>{{ spectacle.atelier|raw }}</p>
             {% endif %}
-
-            {% if spectacle.coproduction is not empty %}
-                <h3 class="teal my-5">Coproduction : </h3>
+        </div>
+        <div class="col-md-12 text-single">
+        {% if spectacle.coproduction is not empty %}
+                <hr size="4" width="100%">
+                <h6 class="mt-3 text-secondary text-uppercase">Coproduction</h6>
                 <p>{{ spectacle.coproduction|raw }}</p>
             {% endif %}
-
-            {% if spectacle.enSavoirPlus is not empty %}
-                <h3 class="teal my-5">En savoir plus : </h3>
-
+        </div>
+        <div class="col-md-12 text-single">
+        {% if spectacle.enSavoirPlus is not empty %}
+                <hr size="4" width="100%">
+                <h6 class="mt-3 text-secondary text-uppercase">En savoir plus</h6>
                 <p>{{ spectacle.enSavoirPlus|raw }}</p>
             {% endif %}
-
-            {% if spectacle.representations is not empty %}
-                <h3 class="teal my-5">Representations : </h3>
+        </div>
+        <div class="col-md-12 text-single">
+        {% if spectacle.representations is not empty %}
+                <hr size="4" width="100%">
+                <h6 class="mt-3 text-secondary text-uppercase">Representations</h6>
                 <p>{{ spectacle.representations|raw }}</p>
             {% endif %}
+        </div>
+    </div>
+    <hr size="4" width="100%">
+    <div class="row">
+        <div class="col-md-6 text-single text-center">
+            <h6 class="my-2 text-secondary text-uppercase">En pratique</h6>
 
-
-
-
-
+            {% if spectacle.dossier is not empty %}
+                <p>
+                    <a href="{{ spectacle.dossier }}" target="_blank"><i class="fas fa-file-pdf"></i> Télécharger le dossier du spectacle</a>
+                </p>
+            {% endif %}
+            {% if spectacle.dossierPeda is not empty %}
+                <p>
+                    <a href="{{ spectacle.dossierPeda }}" target="_blank"><i class="fas fa-file-pdf"></i> Télécharger le dossier du spectacle pédagogique</a>
+                </p>
+            {% endif %}
             {% if spectacle.enPratique is not empty %}
-                <h3 class="teal my-5">En pratique : </h3>
                 <p>{{ spectacle.enPratique|raw }}</p>
             {% endif %}
-
             {% if spectacle.enTournee is not empty %}
                 <p><strong>En tournée : </strong>{{ spectacle.enTournee|raw }}</p>
             {% endif %}
 
             {% if spectacle.dimensionsPlateau is not empty %}
                 <p><strong>Dimensions plateau : </strong>{{ spectacle.dimensionsPlateau }}</p>
-
             {% endif %}
         </div>
-
-
+        <div class="col-md-6 text-single text-center">
+            <h6 class="my-2 text-secondary text-uppercase">La compagnie</h6>
+            <p><strong>{{ spectacle.nomCie }}</strong></p>
+            <p>Basée en <strong>{{ spectacle.pays }}</strong> ({{ spectacle.departement }})</p>
+            {% if spectacle.siteCie is not empty %}
+            <p>
+                <a href="{{ spectacle.siteCie }}" target="_blank"><i class="fas fa-window-restore"></i> Site de la compagnie</a>
+            </p>
+            {% endif %}
+        </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
+    <div class="row my-3">
+        <div class="text-center col">
+            <a href="mailto:{{ spectacle.mailContact }}?subject={{ spectacle.titre }} - demande d'informations en ligne" class="btn btn-outline-info">Contactez-nous</a>
+        </div>
+    </div>
+    <div class="text-center d-flex flex-wrap">
+        <div class="col-md-6">
+            <img  class="mt-4 img-fluid w-100" src="{{ asset('images/spectacles/' ~ spectacle.image2) }}" alt="">
+        </div>
+        <div class="col-md-6">
+            <img  class="mt-4 img-fluid w-100" src="{{ asset('images/spectacles/' ~ spectacle.image3) }}" alt="">
+    </div>
+    </div>
 </div>
+
 
 {% endblock %}
 

@@ -297,25 +297,28 @@ table tr td{
 .link{
     color: teal !important;
     transition: 0.3s;
+    font-size: 1.2em;
+}
+
+.link>i{
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid teal;
+    transition: 0.3s;
 
 }
 
-a.link:hover{
-    text-decoration: none;
-    border-radius: 10px;
-    border: 0.8px solid teal;
-    padding: 5px;
-    transition: 0.3s;
+.link>i:hover{
+
     color: white !important;
     background-color: teal;
-    font-weight: lighter;
-    box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.75);
 
 }
 
 
 hr{
-    border: 1px dotted teal;
+    border: 2px dashed teal;
 }
 
 .teal{
@@ -329,7 +332,17 @@ hr{
 
 
 .text-single>p{
-    font-size: 0.8em;
+    font-size: 0.9em;
+    line-height: 1.3em;
+}
+
+.text-single a{
+    color: teal !important;
+    text-decoration: none;
+}
+
+.text-single a:hover{
+    color: grey !important;
 }
 
 
@@ -397,4 +410,11 @@ hr{
     width: 100%;
     display: none;
     border-radius: 15px;
+}
+
+
+
+.navbar-toggler-icon{
+    width: 1em;
+    height: 1em;
 }

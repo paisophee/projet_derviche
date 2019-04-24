@@ -23,6 +23,10 @@
         <div id="all-spectacle">
 
 
+
+
+
+
 {% for categorie in categorieMoliere %}
                         {% if categorie.spectacles is not empty %}
                                 <!----------Musique glider4------------------------------------------------------->
@@ -37,7 +41,7 @@
                                                                         <div class="gradient-border-bottom">
                                                                                 <div class="gradient-border">
                                                                                         <a href="{{ path('app_spectacle_singlespectacle', {'id' : spectacle.id }) }}" class="box-glider-a">
-                                                                                                <img class="img-container box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
+                                                                                                <img class="box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
                                                                                                 <h6 class="titre-bloc-spectacle">{{ spectacle.titre }}</h6>
                                                                                                 <p>{{ spectacle.nomCie }}</p>
                                                                                         </a>
@@ -72,7 +76,7 @@
                                                                 <div class="gradient-border-bottom">
                                                                         <div class="gradient-border">
                                                                                 <a href="{{ path('app_spectacle_singlespectacle', {'id' : spectacle.id }) }}" class="box-glider-a">
-                                                                                        <img class="img-container img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
+                                                                                        <img class="img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
                                                                                         <h6 class="titre-bloc-spectacle">{{ spectacle.titre }}</h6>
                                                                                         <p>{{ spectacle.titre }}</p>
                                                                                 </a>
@@ -106,7 +110,7 @@
                                                 <div class="gradient-border-bottom">
                                                         <div class="gradient-border">
                                                                 <a href="{{ path('app_spectacle_singlespectacle', {'id' : spectacle.id }) }}" class="box-glider-a">
-                                                                        <img class="img-container box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
+                                                                        <img class="box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
                                                                         <h6 class="titre-bloc-spectacle">{{ spectacle.titre }}</h6>
                                                                         <p>{{ spectacle.nomCie }}</p>
                                                                 </a>
@@ -144,7 +148,7 @@
                                                 <div class="gradient-border-bottom">
                                                         <div class="gradient-border">
                                                                 <a href="{{ path('app_spectacle_singlespectacle', {'id' : spectacle.id }) }}" class="box-glider-a">
-                                                                        <img class="img-container box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
+                                                                        <img class="box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
                                                                         <h6 class="titre-bloc-spectacle">{{ spectacle.titre }}</h6>
                                                                         <p>{{ spectacle.nomCie }}</p>
                                                                 </a>
@@ -180,7 +184,7 @@
                                                 <div class="gradient-border-bottom">
                                                         <div class="gradient-border">
                                                                 <a href="{{ path('app_spectacle_singlespectacle', {'id' : spectacle.id }) }}" class="box-glider-a">
-                                                                        <img class="img-container box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
+                                                                        <img class="box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
                                                                         <h6 class="titre-bloc-spectacle">{{ spectacle.titre }}</h6>
                                                                         <p>{{ spectacle.nomCie }}</p>
                                                                 </a>
@@ -215,7 +219,7 @@
                                                                 <div class="gradient-border-bottom">
                                                                         <div class="gradient-border">
                                                                                 <a href="{{ path('app_spectacle_singlespectacle', {'id' : autre.id }) }}" class="box-glider-a">
-                                                                                        <img class="img-container box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ autre.image1) }}" alt="">
+                                                                                        <img class="box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ autre.image1) }}" alt="">
                                                                                         <h6 class="titre-bloc-spectacle">{{ autre.titre }}</h6>
                                                                                         <p>{{ autre.titre }}</p>
                                                                                 </a>

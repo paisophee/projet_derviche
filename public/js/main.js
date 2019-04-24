@@ -92,4 +92,17 @@ $(function () {
 });
 
 
+/* Menu Burger*/
+window.addEventListener('load', function(){
 
+    var btnBurger = $(".burger");
+    var blocMenu = $(".nav-responsive");
+
+
+    btnBurger.on("click", function(){
+        blocMenu.fadeToggle();
+
+    })
+
+
+});

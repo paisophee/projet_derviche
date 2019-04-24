@@ -19,7 +19,7 @@ class CategorieType extends AbstractType
                 'type',
                 TextType::class,
                 [
-                    'label' => "Type de catégorie"
+                    'label' => "Nouvelle catégorie"
 
                 ]
             )

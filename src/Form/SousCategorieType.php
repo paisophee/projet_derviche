@@ -18,17 +18,10 @@ class SousCategorieType extends AbstractType
                 'type',
                 TextType::class,
                 [
-                    'label' => 'Type sous catégorie'
+                    'label' => 'Nouvelle sous catégorie'
                 ]
             )
-            ->add(
-                'image',
-                FileType::class,
-                [
-                    'label' => 'Image',
-                    'required' => false
-                ]
-            );
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

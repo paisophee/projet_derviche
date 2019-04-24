@@ -1879,6 +1879,10 @@ input, select, textarea {
 						outline: 0;
 					}
 
+					.burger{
+						display: none;
+					}
+
 		@media screen and (max-width: 736px) {
 
 			#header {
@@ -1901,7 +1905,38 @@ input, select, textarea {
 
 				#header nav {
 					display: none;
+
 				}
+
+				.nav-responsive{
+					width: 100%;
+					background-color: white;
+					position: absolute;
+					top: 40px !important;
+					right: 0 !important;
+					height: auto !important;
+
+				}
+
+				#header nav ul li {
+					display: flex;
+					flex-direction: row !important;
+
+				}
+
+				#header nav ul li a{
+					margin: 0 auto;
+				}
+
+				#header .burger{
+					display: inline;
+					position: relative;
+					top: -40px;
+					font-size: 1em;
+					padding-left: 90%;
+				}
+
+
 
 		}
 
@@ -2240,6 +2275,10 @@ input, select, textarea {
 					margin: 0 0 1em 0;
 				}
 
+				#footer>.ancre{
+					left: 20px;
+				}
+
 		}
 
 		@media screen and (max-width: 736px) {
@@ -2290,6 +2329,15 @@ input, select, textarea {
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
 	}
+
+
+/*page nos spectacle*/
+#blocAllSpectacle {
+	background: url("images/overlay.png"), url("images/derviche_diffusion_fond_contact.jpg");
+	background-size: 256px 256px, cover;
+	background-attachment: fixed, fixed;
+	background-position: top left, center center;
+}
 
 /* Contact */
 
