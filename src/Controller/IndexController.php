@@ -73,5 +73,19 @@ class IndexController extends AbstractController
 
     }
 
+    /**
+     * @Route("/mentionsLegales")
+     */
+    public function mentionsLegales(){
+        return $this -> render('index/mentionsLegales.html.twig');
+    }
+
+    /**
+     * @Route("/PolConf")
+     */
+    public function polConf(){
+        return $this -> render('index/polConf.html.twig');
+    }
+
 
 }

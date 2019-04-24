@@ -174,8 +174,9 @@
         <div id="footer">
             <a href="#intro" class="button style2 down anchored rotation"></a>
             <ul class="menu">
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="#">Politique de confidentialité</a></li>
+                <li><a href="{{ path('app_index_mentionslegales') }}">Mentions légales</a></li>
+                <li><a href="{{ path('app_index_polconf') }}">Politique de confidentialité</a></li>
+                <li><a href="https://fr-fr.facebook.com/dervichediffusion/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
             </ul>
             {# Si l'utilisateur n'est pas connecté#}
             {% if app.user is null %}
