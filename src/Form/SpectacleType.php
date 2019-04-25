@@ -110,7 +110,7 @@ class SpectacleType extends AbstractType
                 //input de type file
                 FileType::class,
                 [
-                    'label' => 'Photo 1',
+                    'label' => 'Photo de couverture',
                     'required' => false,
                 ])
             ->add(
@@ -227,7 +227,7 @@ class SpectacleType extends AbstractType
                 'coproduction',
                 CKEditorType::class,
                 [
-                    'label' => 'Coproduction',
+                    'label' => 'Coproduction et Soutien',
                     'required' => false,
                 ]
             )

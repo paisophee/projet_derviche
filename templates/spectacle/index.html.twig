@@ -27,39 +27,6 @@
 
 
 
-{% for categorie in categorieMoliere %}
-                        {% if categorie.spectacles is not empty %}
-                                <!----------Musique glider4------------------------------------------------------->
-                                <div class="spectacle mt-5">
-                                        <h3 class="mb-4 text-secondary">{{ categorie }}</h3>
-                                        <div data-name="" class="glider-contain multiple">
-                                                <div class="glider glider4" id="">
-
-
-                                                        {% for spectacle in categorie.spectacles %}
-                                                                <div class="box-glider">
-                                                                        <div class="gradient-border-bottom">
-                                                                                <div class="gradient-border">
-                                                                                        <a href="{{ path('app_spectacle_singlespectacle', {'id' : spectacle.id }) }}" class="box-glider-a">
-                                                                                                <img class="box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
-                                                                                                <h6 class="titre-bloc-spectacle">{{ spectacle.titre }}</h6>
-                                                                                                <p>{{ spectacle.nomCie }}</p>
-                                                                                        </a>
-                                                                                </div>
-                                                                        </div>
-                                                                </div>
-                                                        {% endfor %}
-                                                </div>
-
-                                                <button role="button" aria-label="Previous" class="glider-prev" id=""><i class="fa fa-chevron-left"></i></button>
-                                                <button role="button" aria-label="Next" class="glider-next" id=""><i class="fa fa-chevron-right"></i></button>
-                                                <div class="dots glider-dots"></div>
-
-                                        </div>
-                                </div>
-                        {% endif %}
-
-                {% endfor %}
 
 
 {% if jeunePublic is not empty %}
@@ -78,7 +45,7 @@
                                                                                 <a href="{{ path('app_spectacle_singlespectacle', {'id' : spectacle.id }) }}" class="box-glider-a">
                                                                                         <img class="img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
                                                                                         <h6 class="titre-bloc-spectacle">{{ spectacle.titre }}</h6>
-                                                                                        <p>{{ spectacle.titre }}</p>
+                                                                                        <p>{{ spectacle.nomCie }}</p>
                                                                                 </a>
                                                                         </div>
                                                                 </div>
@@ -86,87 +53,86 @@
                                                 {% endfor %}
                                         </div>
 
-                                        <button role="button" aria-label="Previous" class="glider-prev" id=""><i class="fa fa-chevron-left"></i></button>
-                                        <button role="button" aria-label="Next" class="glider-next" id=""><i class="fa fa-chevron-right"></i></button>
-                                        <div class="dots glider-dots"></div>
+                                        <button role="button" aria-label="Previous" class="glider-prev6" id=""><i class="fa fa-chevron-left"></i></button>
+                                        <button role="button" aria-label="Next" class="glider-next6" id=""><i class="fa fa-chevron-right"></i></button>
+                                        <div class="dots6 glider-dots"></div>
 
                                 </div>
                         </div>
 
                 {% endif %}
 
-
-{% for categorie in categoriesTheatre %}
-        {% if categorie.spectacles is not empty %}
-        <!----------theatre glider1------------------------------------------------------->
-        <div class="spectacle mt-5">
-                <h3 class="mb-4 text-secondary">{{ categorie }}</h3>
-                <div data-name="" class="glider-contain multiple">
-                        <div class="glider glider1" id="">
-
-
-                                {% for spectacle in categorie.spectacles %}
-                                        <div class="box-glider">
-                                                <div class="gradient-border-bottom">
-                                                        <div class="gradient-border">
-                                                                <a href="{{ path('app_spectacle_singlespectacle', {'id' : spectacle.id }) }}" class="box-glider-a">
-                                                                        <img class="box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
-                                                                        <h6 class="titre-bloc-spectacle">{{ spectacle.titre }}</h6>
-                                                                        <p>{{ spectacle.nomCie }}</p>
-                                                                </a>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                {% endfor %}
-
-
-                        </div>
-
-                        <button role="button" aria-label="Previous" class="glider-prev" id=""><i class="fa fa-chevron-left"></i></button>
-                        <button role="button" aria-label="Next" class="glider-next" id=""><i class="fa fa-chevron-right"></i></button>
-                        <div class="dots glider-dots"></div>
-
-                </div>
-        </div>
-        {% endif %}
-
-{% endfor %}
-
-
 {% for categorie in categorieDanse %}
         {% if categorie.spectacles is not empty %}
 
-        <!----------Danse glider2------------------------------------------------------->
-        <div class="spectacle mt-5">
-                <h3 class="mb-4 text-secondary">{{ categorie }}</h3>
-                <div data-name="" class="glider-contain multiple">
-                        <div class="glider glider2" id="">
+                <!----------Danse glider2------------------------------------------------------->
+                <div class="spectacle mt-5">
+                        <h3 class="mb-4 text-secondary">{{ categorie }}</h3>
+                        <div data-name="" class="glider-contain multiple">
+                                <div class="glider glider2" id="">
 
 
-                                {% for spectacle in categorie.spectacles %}
-                                        <div class="box-glider">
-                                                <div class="gradient-border-bottom">
-                                                        <div class="gradient-border">
-                                                                <a href="{{ path('app_spectacle_singlespectacle', {'id' : spectacle.id }) }}" class="box-glider-a">
-                                                                        <img class="box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
-                                                                        <h6 class="titre-bloc-spectacle">{{ spectacle.titre }}</h6>
-                                                                        <p>{{ spectacle.nomCie }}</p>
-                                                                </a>
+                                        {% for spectacle in categorie.spectacles %}
+                                                <div class="box-glider">
+                                                        <div class="gradient-border-bottom">
+                                                                <div class="gradient-border">
+                                                                        <a href="{{ path('app_spectacle_singlespectacle', {'id' : spectacle.id }) }}" class="box-glider-a">
+                                                                                <img class="box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
+                                                                                <h6 class="titre-bloc-spectacle">{{ spectacle.titre }}</h6>
+                                                                                <p>{{ spectacle.nomCie }}</p>
+                                                                        </a>
+                                                                </div>
                                                         </div>
                                                 </div>
-                                        </div>
-                                {% endfor %}
+                                        {% endfor %}
 
+
+                                </div>
+
+                                <button role="button" aria-label="Previous" class="glider-prev2" id=""><i class="fa fa-chevron-left"></i></button>
+                                <button role="button" aria-label="Next" class="glider-next2" id=""><i class="fa fa-chevron-right"></i></button>
+                                <div class="dots2 glider-dots"></div>
 
                         </div>
-
-                        <button role="button" aria-label="Previous" class="glider-prev" id=""><i class="fa fa-chevron-left"></i></button>
-                        <button role="button" aria-label="Next" class="glider-next" id=""><i class="fa fa-chevron-right"></i></button>
-                        <div class="dots glider-dots"></div>
-
                 </div>
-        </div>
         {% endif %}
+{% endfor %}
+
+
+{% for categorie in categoriesTheatre %}
+{% if categorie.spectacles is not empty %}
+<!----------theatre glider1------------------------------------------------------->
+<div class="spectacle mt-5">
+<h3 class="mb-4 text-secondary">{{ categorie }}</h3>
+<div data-name="" class="glider-contain multiple">
+        <div class="glider glider1" id="">
+
+
+                {% for spectacle in categorie.spectacles %}
+                        <div class="box-glider">
+                                <div class="gradient-border-bottom">
+                                        <div class="gradient-border">
+                                                <a href="{{ path('app_spectacle_singlespectacle', {'id' : spectacle.id }) }}" class="box-glider-a">
+                                                        <img class="box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
+                                                        <h6 class="titre-bloc-spectacle">{{ spectacle.titre }}</h6>
+                                                        <p>{{ spectacle.nomCie }}</p>
+                                                </a>
+                                        </div>
+                                </div>
+                        </div>
+                {% endfor %}
+
+
+        </div>
+
+        <button role="button" aria-label="Previous" class="glider-prev1" id=""><i class="fa fa-chevron-left"></i></button>
+        <button role="button" aria-label="Next" class="glider-next1" id=""><i class="fa fa-chevron-right"></i></button>
+        <div class="dots1 glider-dots"></div>
+
+</div>
+</div>
+{% endif %}
+
 {% endfor %}
 
 
@@ -194,9 +160,9 @@
                                 {% endfor %}
                         </div>
 
-                        <button role="button" aria-label="Previous" class="glider-prev" id=""><i class="fa fa-chevron-left"></i></button>
-                        <button role="button" aria-label="Next" class="glider-next" id=""><i class="fa fa-chevron-right"></i></button>
-                        <div class="dots glider-dots"></div>
+                        <button role="button" aria-label="Previous" class="glider-prev3" id=""><i class="fa fa-chevron-left"></i></button>
+                        <button role="button" aria-label="Next" class="glider-next3" id=""><i class="fa fa-chevron-right"></i></button>
+                        <div class="dots3 glider-dots"></div>
 
                 </div>
         </div>
@@ -221,7 +187,7 @@
                                                                                 <a href="{{ path('app_spectacle_singlespectacle', {'id' : autre.id }) }}" class="box-glider-a">
                                                                                         <img class="box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ autre.image1) }}" alt="">
                                                                                         <h6 class="titre-bloc-spectacle">{{ autre.titre }}</h6>
-                                                                                        <p>{{ autre.titre }}</p>
+                                                                                        <p>{{ autre.nomCie }}</p>
                                                                                 </a>
                                                                         </div>
                                                                 </div>
@@ -229,27 +195,50 @@
                                                 {% endfor %}
                                         </div>
 
-                                        <button role="button" aria-label="Previous" class="glider-prev" id=""><i class="fa fa-chevron-left"></i></button>
-                                        <button role="button" aria-label="Next" class="glider-next" id=""><i class="fa fa-chevron-right"></i></button>
-                                        <div class="dots glider-dots"></div>
+                                        <button role="button" aria-label="Previous" class="glider-prev5" id=""><i class="fa fa-chevron-left"></i></button>
+                                        <button role="button" aria-label="Next" class="glider-next5" id=""><i class="fa fa-chevron-right"></i></button>
+                                        <div class="dots5 glider-dots"></div>
 
                                 </div>
                         </div>
                 {% endif %}
 
+{% for categorie in categorieMoliere %}
+                        {% if categorie.spectacles is not empty %}
+                                <!----------Musique glider4------------------------------------------------------->
+                                <div class="spectacle mt-5">
+                                        <h3 class="mb-4 text-secondary">{{ categorie }}</h3>
+                                        <div data-name="" class="glider-contain multiple">
+                                                <div class="glider glider4" id="">
 
 
+                                                        {% for spectacle in categorie.spectacles %}
+                                                                <div class="box-glider">
+                                                                        <div class="gradient-border-bottom">
+                                                                                <div class="gradient-border">
+                                                                                        <a href="{{ path('app_spectacle_singlespectacle', {'id' : spectacle.id }) }}" class="box-glider-a">
+                                                                                                <img class="box-glider-img img-fluid" src="{{ asset('images/spectacles/'~ spectacle.image1) }}" alt="">
+                                                                                                <h6 class="titre-bloc-spectacle">{{ spectacle.titre }}</h6>
+                                                                                                <p>{{ spectacle.nomCie }}</p>
+                                                                                        </a>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        {% endfor %}
+                                                </div>
+
+                                                <button role="button" aria-label="Previous" class="glider-prev4" id=""><i class="fa fa-chevron-left"></i></button>
+                                                <button role="button" aria-label="Next" class="glider-next4" id=""><i class="fa fa-chevron-right"></i></button>
+                                                <div class="dots4 glider-dots"></div>
+
+                                        </div>
+                                </div>
+                        {% endif %}
+
+                {% endfor %}
 
 
-
-
-
-       </div>
-
-
-
-
-
+        </div>
 
 </div>
 

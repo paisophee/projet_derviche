@@ -157,17 +157,21 @@
 
             <div class="col-md-4">
                 {% if original_image2 is not null %}
-                    <p>Actuellement en photo n°2 :
-                        <img src="{{ asset('images/spectacles/'~ original_image2) }}" height="200px">
-                    </p>
+                    {% if original_image2 is not empty %}
+                        <p>Actuellement en photo n°2 :
+                            <img src="{{ asset('images/spectacles/'~ original_image2) }}" height="200px">
+                        </p>
+                    {% endif %}
                 {% endif %}
             </div>
 
             <div class="col-md-4">
                 {% if original_image3 is not null %}
-                    <p>Actuellement en photo n°3 :
-                        <img src="{{ asset('images/spectacles/'~ original_image3) }}" height="200px">
-                    </p>
+                    {% if original_image3 is not empty %}
+                        <p>Actuellement en photo n°3 :
+                            <img src="{{ asset('images/spectacles/'~ original_image3) }}" height="200px">
+                        </p>
+                    {% endif %}
                 {% endif %}
             </div>
         </div>

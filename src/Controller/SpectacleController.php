@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Entity\Categorie;
 use App\Entity\Spectacle;
 use App\Form\SearchSpectacleType;
+use App\Repository\SpectacleRepository;
 use Composer\Command\DumpAutoloadCommand;
 use Doctrine\DBAL\Connection;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -305,7 +306,25 @@ class SpectacleController extends AbstractController
     }
 
 
+    /**
+     * @Route("/apercu/{id}")
+     */
+    public function ajaxContent(Request $request, Spectacle $spectacle)
+    {
+        if($request->isXmlHttpRequest()) {
 
+            return $this->render(
+                'admin/spectacles/ajax_content.html.twig',
+                [
+                    'spectacle' => $spectacle
+                ]
+                );
+
+        }else{
+            throw new NotFoundHttpException();
+        }
+
+    }
 
 
 

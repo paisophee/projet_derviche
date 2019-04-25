@@ -355,7 +355,7 @@ class SpectacleRepository extends ServiceEntityRepository
 
     public function getDepartements()
     {
-        return [75 => 75, 28 => 28];
+        return [75 => 75, 61 => 61, 69 => 69];
     }
 
     public function getPays()
